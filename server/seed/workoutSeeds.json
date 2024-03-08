@@ -48,19 +48,19 @@
         "createdAt": { "$date": "2024-03-07"}
     },
     {
-        "title": "Mt. Ella",
+        "title": "Hiking Mt. Ellinor",
         "workoutUser": "Tchaikovsky",
-        "details": "",
-        "type": "",
-        "duration": "",
+        "details": "3.2 miles / 2,500 elevation gain",
+        "type": "Cardio",
+        "duration": "4 hours",
         "createdAt": { "$date": "2024-03-07"}
     },
     {
-        "title": "",
+        "title": "Cycling",
         "workoutUser": "Antonio Vivaldi",
-        "details": "",
-        "type": "",
-        "duration": "",
+        "details": "A quick workout before going back to compose a symphony masterpiece!",
+        "type": "Cardio",
+        "duration": "15 minutes",
         "createdAt": { "$date": "2024-03-07"}
     }
 ]
