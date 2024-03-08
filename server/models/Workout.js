@@ -11,11 +11,6 @@ const workoutSchema = new Schema({
         require: true
     },
 
-    workoutUser: {
-        type: String,
-        require: true,
-    },
-
     details: {
         type: String,
         required: true

@@ -29,13 +29,13 @@ const resolvers = {
   },
 
   Mutation: {
-    login: async (parent, { email, password }) => {
-      const user = await User.findOne({ email });
+    login: async (parent, { username, email, password }) => {
+      const user = await User.findOne({ $or: [{ email }, { username }]});
 
       if (!user) {
         throw AuthenticationError;
       };
-
+      
       const correctPw = await user.isCorrectPassword(password);
 
       if (!correctPw) {
@@ -88,11 +88,11 @@ const resolvers = {
       return Workout.findOneAndDelete({ _id: _id });
     },
 
-    addComment: async (parents, { workoutId, content, author }) => {
+    addComment: async (parents, { workoutId, commentText, commentAuthor }) => {
       return Workout.findOneAndUpdate(
         { _id: workoutId },
         {
-          $addToSet: { comments: { content, author } },
+          $addToSet: { comments: { commentText, commentAuthor } },
         },
         {
           new: true,

@@ -44,12 +44,12 @@ const typeDefs = `
     }
 
     type Mutation {
-        login(email: String!, password: String!): Auth
+        login(username: String, email: String, password: String!): Auth
         addUser(username: String!, email: String!, password: String!): Auth
         addWorkout(args: WorkoutArgs): Workout
         updateWorkout(args: WorkoutArgs): Workout
         deleteWorkout(_id: ID!): Workout
-        addComment(workoutId: ID!, content: String!, author: String!): Comment
+        addComment(workoutId: ID!, commentText: String!, commentAuthor: String!): Comment
         deleteComment(workoutId: ID!, commentId: ID! ): Workout
     }
 
