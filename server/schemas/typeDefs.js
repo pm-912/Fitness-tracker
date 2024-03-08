@@ -10,9 +10,9 @@ const typeDefs = `
     type Workout {
         _id: ID!
         title: String!
-        details: String!
+        details: String
         date: Date
-        type: String!
+        type: String
         duration: String
         comments: [Comment]
     }
@@ -27,7 +27,7 @@ const typeDefs = `
     type Auth {
         token: ID!
         user: User
-      }
+    }
 
     type Query {
         allWorkouts(_id: ID!): [Workout]
@@ -35,14 +35,22 @@ const typeDefs = `
         singleWorkout(_id: ID!): Workout
     }
 
+    input WorkoutArgs {
+        _id: ID!
+        title: String
+        details: String
+        type: String
+        duration: String
+    }
+
     type Mutation {
-        login:
-        addUser:
-        addWorkout:
-        updateWorkout:
-        deleteWorkout:
-        addComment:
-        deleteComment:
+        login(email: String!, password: String!): Auth
+        addUser(username: String!, email: String!, password: String!): Auth
+        addWorkout(args: WorkoutArgs): Workout
+        updateWorkout(args: WorkoutArgs): Workout
+        deleteWorkout(_id: ID!): Workout
+        addComment(workoutId: ID!, content: String!, author: String!): Comment
+        deleteComment(workoutId: ID!, commentId: ID! ): Workout
     }
 
 `
