@@ -18,7 +18,7 @@ db.once('open', async () => {
         { username: workoutUser },
         {
           $addToSet: {
-            thoughts: _id,
+            workouts: _id,
           },
         }
       );
