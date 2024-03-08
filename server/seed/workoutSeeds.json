@@ -1,7 +1,55 @@
 [
     {
-        "title": "",
-        "workoutUser": "",
+        "title": "Running",
+        "workoutUser": "minecraftluvr40045",
+        "details": "Distance: 5k",
+        "type": "Cardio",
+        "duration": "30 minutes",
+        "createdAt": { "$date": "2024-03-07"}
+    },
+    {
+        "title": "Heavy Leg Day",
+        "workoutUser": "tamethisimpala420",
+        "details": "10 min stairs warmup; 3x25 leg extension; 3x25 leg curl; 4x25 leg press; 2x8 Romanian deadlift;  2x10 barbell squats; 2xfailure goblet squats; 4x25 kettlebell swing",
+        "type": "Lifting",
+        "duration": "60 minutes",
+        "createdAt": { "$date": "2024-03-07"}
+    },
+    {
+        "title": "Pilates",
+        "workoutUser": "Ludwig van Beethoven",
+        "details": "attended an instructor led pilates class",
+        "type": "Aerobic",
+        "duration": "45 minutes",
+        "createdAt": { "$date": "2024-03-07"}
+    },
+    {
+        "title": "Zumba",
+        "workoutUser": "goatedmountaingoat",
+        "details": "First time going to a zumba class... I'm sticking to jumpropes...",
+        "type": "Dance",
+        "duration": "30 minutes",
+        "createdAt": { "$date": "2024-03-07"}
+    },
+    {
+        "title": "Swimming",
+        "workoutUser": "Claude Debussy",
+        "details": "Swam laps",
+        "type": "Aerobic",
+        "duration": "60 minutes",
+        "createdAt": { "$date": "2024-03-07"}
+    },
+    {
+        "title": "Yoga",
+        "workoutUser": "Chopin",
+        "details": "Took a hot yoga class! Sweating",
+        "type": "Anaerobic",
+        "duration": "45 minutes",
+        "createdAt": { "$date": "2024-03-07"}
+    },
+    {
+        "title": "Mt. Ella",
+        "workoutUser": "Tchaikovsky",
         "details": "",
         "type": "",
         "duration": "",
@@ -9,55 +57,7 @@
     },
     {
         "title": "",
-        "workoutUser": "",
-        "details": "",
-        "type": "",
-        "duration": "",
-        "createdAt": { "$date": "2024-03-07"}
-    },
-    {
-        "title": "",
-        "workoutUser": "",
-        "details": "",
-        "type": "",
-        "duration": "",
-        "createdAt": { "$date": "2024-03-07"}
-    },
-    {
-        "title": "",
-        "workoutUser": "",
-        "details": "",
-        "type": "",
-        "duration": "",
-        "createdAt": { "$date": "2024-03-07"}
-    },
-    {
-        "title": "",
-        "workoutUser": "",
-        "details": "",
-        "type": "",
-        "duration": "",
-        "createdAt": { "$date": "2024-03-07"}
-    },
-    {
-        "title": "",
-        "workoutUser": "",
-        "details": "",
-        "type": "",
-        "duration": "",
-        "createdAt": { "$date": "2024-03-07"}
-    },
-    {
-        "title": "",
-        "workoutUser": "",
-        "details": "",
-        "type": "",
-        "duration": "",
-        "createdAt": { "$date": "2024-03-07"}
-    },
-    {
-        "title": "",
-        "workoutUser": "",
+        "workoutUser": "Antonio Vivaldi",
         "details": "",
         "type": "",
         "duration": "",
