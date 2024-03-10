@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const WorkoutForm = () => {
     const [title, setTitle] = useState('');
     const [type, setType] = useState('');
     const [duration, setDuration] = useState('');
     const [description, setDescription] = useState('');
-    const history = useHistory();
+    const navigate = useNavigate();
 
     // 30 min interval for duration
     const generateDurationOptions = () => {
@@ -22,7 +22,7 @@ const WorkoutForm = () => {
         try {
             // user submission 
             console.log('Posting workout:', { title, type, duration, description });
-            history.push('/UserWorkout'); // redirects to user workouts
+            navigate('/UserWorkout'); // redirects to user workouts
         } catch (error) {
             console.error('Error:', error);
         }
