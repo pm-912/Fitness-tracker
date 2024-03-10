@@ -1,7 +1,7 @@
-const mongoose = require('mongoose');
+const { Schema,model } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
 
-const { Schema } = mongoose;
+
 
 const workoutSchema = new Schema({
 
