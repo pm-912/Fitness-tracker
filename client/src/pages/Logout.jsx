@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Logout = () => {
-  const history = useHistory();
+  const navigate = useNavigate();
 
   useEffect(() => {
     localStorage.removeItem('token');// clear token, and local storage
-    history.push('/login'); // redirect to login
+    navigate('/login'); // redirect to login
   }, [history]);
 
   return (

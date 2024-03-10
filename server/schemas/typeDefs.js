@@ -11,7 +11,7 @@ const typeDefs = `
         _id: ID!
         title: String!
         details: String
-        date: Date
+        date: String
         type: String
         duration: String
         comments: [Comment]
@@ -19,7 +19,7 @@ const typeDefs = `
 
     type Comment {
         _id: ID!
-        date: Date
+        date: String
         author: User!
         content: String!
     }

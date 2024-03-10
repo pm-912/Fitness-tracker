@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useMutation, gql } from '@apollo/client'; 
 //mutations
 const LOGIN_MUTATION = gql`
@@ -21,7 +21,7 @@ const SIGNUP_MUTATION = gql`
 const Auth = ({ isLogin }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const history = useHistory();
+  const navigate = useNavigate();
 
   // mutations
   const [loginMutation] = useMutation(LOGIN_MUTATION);
@@ -41,7 +41,8 @@ const Auth = ({ isLogin }) => {
         });
         localStorage.setItem('token', data.signup.token);
       }
-      history.push('/WorkoutForm'); // redirects to workoutform
+      navigate('/WorkoutForm'); // redirects to workoutform
+
     } catch (error) {
       console.error('Error:', error);
     }
