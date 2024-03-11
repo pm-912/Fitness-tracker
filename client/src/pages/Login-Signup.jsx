@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useMutation } from '@apollo/client'; 
-import { LOGIN_USER, ADD_USER } from './mutations';
-
+import { useHistory } from 'react-router-dom';
+import { useMutation } from '@apollo/client';
+import { LOGIN_USER, ADD_USER } from './mutations'; // importing the mutations
 
 const Auth = ({ isLogin }) => {
   const [email, setEmail] = useState('');
@@ -10,9 +9,9 @@ const Auth = ({ isLogin }) => {
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
-  // mutations
-  const [loginMutation] = useMutation(LOGIN_MUTATION);
-  const [signupMutation] = useMutation(SIGNUP_MUTATION);
+  // mutations from files
+  const [loginMutation] = useMutation(LOGIN_USER);
+  const [signupMutation] = useMutation(ADD_USER);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -24,16 +23,16 @@ const Auth = ({ isLogin }) => {
         localStorage.setItem('token', data.login.token);
       } else {
         const { data } = await signupMutation({
-          variables: { email, password }
+          variables: { email, username, password } // username
         });
-        localStorage.setItem('token', data.signup.token);
+        localStorage.setItem('token', data.addUser.token);
       }
-      navigate('/WorkoutForm'); // redirects to workoutform
-
+      navigate('/Home'); // redirects to WorkoutForm
     } catch (error) {
       console.error('Error:', error);
     }
   };
+
 
   return (
    <div style={{...styles.card, background:'lightgray', borderColor: 'navy', width: '300px', height: '500px', borderBlockStartColor: 'navy', border}} >
