@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER, ADD_USER } from './mutations'; // importing the mutations
 
@@ -27,7 +28,7 @@ const Auth = ({ isLogin }) => {
         });
         localStorage.setItem('token', data.addUser.token);
       }
-      history.push('/Home'); // redirects to WorkoutForm
+      navigate('/WorkoutForm'); // redirects to workoutform
     } catch (error) {
       console.error('Error:', error);
     }
