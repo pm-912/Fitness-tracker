@@ -10,7 +10,7 @@ const WorkoutCard = ({ workout, onDelete }) => {
   };
 
   const handleUpdate = () => {
-    history.push(`/edit-workout/${id}`); // redirect to workoutForm to edit entries
+    navigate(`/edit-workout/${id}`); // redirect to workout form
   };
 
   return (
