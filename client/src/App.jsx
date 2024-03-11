@@ -1,18 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './public/vite.svg'
-import { setContext } from '@apollo/client/link/context';
-const httpLink = createHttpLink({
-  uri: '/graphql',
-});
-import { Outlet } from 'react-router-dom';
-import './App.css'
+import './App.css';
 import {
   ApolloClient,
   InMemoryCache,
   ApolloProvider,
   createHttpLink,
 } from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
+import { Outlet } from 'react-router-dom';
+
+import { useState } from 'react';
+
+import Header from './components/Header';
+const httpLink = createHttpLink({
+  uri: '/graphql',
+});
+
+
+
+
 
 
 const authLink = setContext((_, { headers }) => {
@@ -36,7 +41,7 @@ function App() {
 
   return (
     <ApolloProvider client={client}>
-   
+      <Header />
       
       <Outlet />
    
