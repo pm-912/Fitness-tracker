@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+
 const WorkoutForm = () => {
     const [title, setTitle] = useState('');
     const [type, setType] = useState('');

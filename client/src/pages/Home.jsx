@@ -3,8 +3,6 @@ import Workout from '../components/Workout'
 import { QUERY_ALL_WORKOUTS } from '../utils/queries'
 import { useState } from 'react';
 
-
-
 const Home = () => {
     // const [workouts, setWorkouts] = useState([])
     const { loading, data } = useQuery(QUERY_ALL_WORKOUTS);
@@ -18,7 +16,8 @@ const Home = () => {
             ) : (
                 workouts && workouts.map((workout) => (
                     
-                <div key={workout._id} className="card" style={{ border: '5px solid #ccc', padding: '10px', margin: '20px', borderRadius: '5px', justifyContent: 'space-between', width: '500px', flexDirection: 'column', borderColor: '#B9E8EF'}} >
+
+                <div key={workout._id} className="card" style={{ border: '5px solid #ccc', padding: '10px', margin: '50px', borderRadius: '5px', justifyContent: 'space-between', width: '500px', flexDirection: 'column', borderColor: '#B9E8EF'}} >
                     <Workout key={workout._id} workout={workout} />
                 </div>)
                 ))}
