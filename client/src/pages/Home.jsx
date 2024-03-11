@@ -4,10 +4,15 @@ import { ALL_WORKOUTS } from '../utils/queries'
 
 
 const Home = () => {
+    const [workouts, setWorkouts] = useState([])
+
     return (
         <main>
+            <h2>Community Workouts</h2>
             <div className="container">
-                <Workout />
+                {workouts.map((workout) =>
+                    <Workout workout={workout} />
+                )}
             </div>
         </main>
     );

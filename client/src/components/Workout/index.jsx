@@ -1,18 +1,18 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
-//import workout model
-//
 
-const Workout = () => {
-
+function Workout({ workout }) {
     return (
 
         <div className="">
-            <div className="title">
-                <h2>____'s Workouts</h2>
-            </div>
-            <Link to={`/workouts/${_id}`}>
-                <p></p>
+            <Link to={`/workouts/${workout._id}`}>
+                <div>
+                    <h3>User</h3>
+                    <p>{workout.title}</p>
+                    <p>{workout.type}</p>
+                    <p>{workout.date}</p>
+                </div>
             </Link>
         </div>
     )
