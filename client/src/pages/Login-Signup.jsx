@@ -4,6 +4,52 @@ import { useMutation } from '@apollo/client';
 import { LOGIN_USER, ADD_USER } from '../utils/mutations'; // importing the mutations
 import { useNavigate } from 'react-router-dom';
 
+
+const styles = {
+  card: {
+    boxShadow: '1 5px 8px rgba(10, 10, 10, 10.1)',
+    borderRadius: '8px',
+    padding: '50px',
+    maxWidth: '800px',
+    margin: 'auto',
+    background: '#ffffff',
+    border: '20px solid #e0e0e0',
+  },
+  container: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+  title: {
+    fontSize: '50px',
+    margin: '10px 0',
+    color: 'blue',
+  },
+  form: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+  input: {
+    width: '100%',
+    padding: '10px',
+    margin: '8px 0',
+    fontSize: '25px',
+    borderRadius: '25px',
+    border: '25px solid #ccc',
+    boxSizing: 'border-box',
+  },
+  button: {
+    backgroundColor: 'white',
+    color: 'white',
+    padding: '12px 20px',
+    borderRadius: '5px',
+    border: 'none',
+    fontSize: '16px',
+    cursor: 'pointer',
+  },
+};
+
 const Auth = ({ isLogin }) => {
   const [email, setEmail] = useState('');
   const [username, setUsername] = useState(''); 
@@ -190,49 +236,5 @@ const Auth = ({ isLogin }) => {
         </form>
       </div>
 
-const styles = {
-  card: {
-    boxShadow: '1 5px 8px rgba(10, 10, 10, 10.1)',
-    borderRadius: '8px',
-    padding: '50px',
-    maxWidth: '800px',
-    margin: 'auto',
-    background: '#ffffff',
-    border: '20px solid #e0e0e0',
-  },
-  container: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-  },
-  title: {
-    fontSize: '50px',
-    margin: '10px 0',
-    color: 'blue',
-  },
-  form: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-  },
-  input: {
-    width: '100%',
-    padding: '10px',
-    margin: '8px 0',
-    fontSize: '25px',
-    borderRadius: '25px',
-    border: '25px solid #ccc',
-    boxSizing: 'border-box',
-  },
-  button: {
-    backgroundColor: 'white',
-    color: 'white',
-    padding: '12px 20px',
-    borderRadius: '5px',
-    border: 'none',
-    fontSize: '16px',
-    cursor: 'pointer',
-  },
-};
 
 export default Auth;
