@@ -30,7 +30,7 @@ const typeDefs = `
     }
 
     type Query {
-        allWorkouts(_id: ID!): [Workout]
+        allWorkouts: [Workout]
         myWorkouts(_id: ID!): [Workout]
         singleWorkout(_id: ID!): Workout
     }
