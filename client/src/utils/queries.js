@@ -8,6 +8,7 @@ export const QUERY_ALL_WORKOUTS = gql`
             details
             type
             duration
+            createdAt
         }
     }
 `;
@@ -23,7 +24,7 @@ export const QUERY_MY_WORKOUTS = gql`
 `;
 
 export const QUERY_SINGLE_WORKOUT = gql`
-    query singleWorkout($workoutIid: ID!) {
+    query singleWorkout($workoutId: ID!) {
         singleWorkout(_id: $workoutId) {
             _id
             title
