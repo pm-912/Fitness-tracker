@@ -1,31 +1,17 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { useMutation, gql } from '@apollo/client'; 
-//mutations
-const LOGIN_MUTATION = gql`
-  mutation Login($email: String, $password: String) {
-    login(email: $email, password: $password) {
-      token
-    }
-  }
-`;
-
-const SIGNUP_MUTATION = gql`
-  mutation Signup($email: String, $password: String) {
-    signup(email: $email, password: $password) {
-      token
-    }
-  }
-`;
+import { useMutation } from '@apollo/client';
+import { LOGIN_USER, ADD_USER } from './mutations'; // importing the mutations
 
 const Auth = ({ isLogin }) => {
   const [email, setEmail] = useState('');
+  const [username, setUsername] = useState(''); 
   const [password, setPassword] = useState('');
   const history = useHistory();
 
-  // mutations
-  const [loginMutation] = useMutation(LOGIN_MUTATION);
-  const [signupMutation] = useMutation(SIGNUP_MUTATION);
+  // mutations from files
+  const [loginMutation] = useMutation(LOGIN_USER);
+  const [signupMutation] = useMutation(ADD_USER);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -37,11 +23,11 @@ const Auth = ({ isLogin }) => {
         localStorage.setItem('token', data.login.token);
       } else {
         const { data } = await signupMutation({
-          variables: { email, password }
+          variables: { email, username, password } // username
         });
-        localStorage.setItem('token', data.signup.token);
+        localStorage.setItem('token', data.addUser.token);
       }
-      history.push('/WorkoutForm'); // redirects to workoutform
+      history.push('/Home'); // redirects to WorkoutForm
     } catch (error) {
       console.error('Error:', error);
     }
@@ -57,6 +43,14 @@ const Auth = ({ isLogin }) => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
+        {!isLogin && ( // username 
+          <input
+            type="text"
+            placeholder="Username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+        )}
         <input
           type="password"
           placeholder="Password"
