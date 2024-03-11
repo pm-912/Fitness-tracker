@@ -28,40 +28,129 @@ const Auth = ({ isLogin }) => {
         });
         localStorage.setItem('token', data.addUser.token);
       }
-      navigate('/WorkoutForm'); // redirects to workoutform
+      navigate('/Home'); // redirects to WorkoutForm
     } catch (error) {
       console.error('Error:', error);
     }
   };
 
+
   return (
-    <div>
-      <h2>{isLogin ? 'Login' : 'Sign Up'}</h2>
+   <div style={{...styles.card, background:'lightgray', borderColor: 'navy', width: '300px', height: '500px', borderBlockStartColor: 'navy', border}} >
+   <br></br>
+      <h2 style={{
+                fontSize: '50px',
+                marginBottom: '20px',
+                color: 'navy',
+           
+
+            }}>{isLogin ? 'Login' : 'Sign Up'}</h2>
       <form onSubmit={handleSubmit}>
-        <input
+        <input style={{
+          // width: '100%',
+          // padding: '10px',
+          // margin: '8px 0',
+          // fontSize: '25px',
+          // borderRadius: '25px',
+          // border: '15px solid #ccc',
+          // boxSizing: 'border-box',
+          // borderBlockColor: 'navy'
+                fontSize: '25px',
+                marginBottom: '20px',
+                color: 'navy',
+                width: '300px',
+                height: '25px'
+                
+                
+            }}
           type="email"
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-        {!isLogin && ( // username 
-          <input
-            type="text"
-            placeholder="Username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-        )}
-        <input
+         <br></br>
+        <input style={{
+          // width: '100%',
+          // padding: '10px',
+          // margin: '8px 0',
+          // fontSize: '25px',
+          // borderRadius: '25px',
+          // border: '15px solid #ccc',
+          // boxSizing: 'border-box',
+          // borderBlockColor: 'navy'
+                fontSize: '25px',
+                marginBottom: '20px',
+                color: 'navy',
+                width: '300px',
+                height: '25px'
+            }}
           type="password"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button type="submit">{isLogin ? 'Login' : 'Sign Up'}</button>
+        <br></br>
+        <button style={{
+                   backgroundColor: 'green',
+                   color: 'white',
+                   padding: '25px 25px',
+                   borderRadius: '20px',
+                   border: '25px',
+                   fontSize: '25px',
+                   cursor: 'pointer',
+                   marginTop: '25px',
+                   width: '150px',
+                   height: '80px'
+                  
+            }}
+            type="submit">{isLogin ? 'Login' : 'Sign Up'}</button>
       </form>
     </div>
   );
+};
+const styles = {
+  card: {
+    boxShadow: '1 5px 8px rgba(10, 10, 10, 10.1)',
+    borderRadius: '8px',
+    padding: '50px',
+    maxWidth: '800px',
+    margin: 'auto',
+    background: '#ffffff',
+    border: '20px solid #e0e0e0',
+  },
+  container: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+  title: {
+    fontSize: '50px',
+    margin: '10px 0',
+    color: 'blue',
+  },
+  form: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+  input: {
+    width: '100%',
+    padding: '10px',
+    margin: '8px 0',
+    fontSize: '25px',
+    borderRadius: '25px',
+    border: '25px solid #ccc',
+    boxSizing: 'border-box',
+  },
+  button: {
+    backgroundColor: 'white',
+    color: 'white',
+    padding: '12px 20px',
+    borderRadius: '5px',
+    border: 'none',
+    fontSize: '16px',
+    cursor: 'pointer',
+  },
 };
 
 export default Auth;
