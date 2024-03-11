@@ -4,63 +4,55 @@
         "workoutUser": "minecraftluvr40045",
         "details": "Distance: 5k",
         "type": "Cardio",
-        "duration": "30 minutes",
-        "createdAt": { "$date": "2024-03-07"}
+        "duration": "30 minutes"
     },
     {
         "title": "Heavy Leg Day",
         "workoutUser": "tamethisimpala420",
         "details": "10 min stairs warmup; 3x25 leg extension; 3x25 leg curl; 4x25 leg press; 2x8 Romanian deadlift;  2x10 barbell squats; 2xfailure goblet squats; 4x25 kettlebell swing",
         "type": "Lifting",
-        "duration": "60 minutes",
-        "createdAt": { "$date": "2024-03-07"}
+        "duration": "60 minutes"
     },
     {
         "title": "Pilates",
         "workoutUser": "Ludwig van Beethoven",
         "details": "attended an instructor led pilates class",
         "type": "Aerobic",
-        "duration": "45 minutes",
-        "createdAt": { "$date": "2024-03-07"}
+        "duration": "45 minutes"
     },
     {
         "title": "Zumba",
         "workoutUser": "goatedmountaingoat",
         "details": "First time going to a zumba class... I'm sticking to jumpropes...",
         "type": "Dance",
-        "duration": "30 minutes",
-        "createdAt": { "$date": "2024-03-07"}
+        "duration": "30 minutes"
     },
     {
         "title": "Swimming",
         "workoutUser": "Claude Debussy",
         "details": "Swam laps",
         "type": "Aerobic",
-        "duration": "60 minutes",
-        "createdAt": { "$date": "2024-03-07"}
+        "duration": "60 minutes"
     },
     {
         "title": "Yoga",
         "workoutUser": "Chopin",
         "details": "Took a hot yoga class! Sweating",
         "type": "Anaerobic",
-        "duration": "45 minutes",
-        "createdAt": { "$date": "2024-03-07"}
+        "duration": "45 minutes"
     },
     {
         "title": "Hiking Mt. Ellinor",
         "workoutUser": "Tchaikovsky",
         "details": "3.2 miles / 2,500 elevation gain",
         "type": "Cardio",
-        "duration": "4 hours",
-        "createdAt": { "$date": "2024-03-07"}
+        "duration": "4 hours"
     },
     {
         "title": "Cycling",
         "workoutUser": "Antonio Vivaldi",
         "details": "A quick workout before going back to compose a symphony masterpiece!",
         "type": "Cardio",
-        "duration": "15 minutes",
-        "createdAt": { "$date": "2024-03-07"}
+        "duration": "15 minutes"
     }
 ]

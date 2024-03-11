@@ -1,4 +1,5 @@
-const { Schema,model } = require('mongoose');
+const mongoose = require('mongoose');
+const { Schema } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
 
 
@@ -54,6 +55,6 @@ const workoutSchema = new Schema({
     ]
 });
 
-const Workout = model('Workout', workoutSchema);
+const Workout = mongoose.model('Workout', workoutSchema);
 
 module.exports = Workout;
