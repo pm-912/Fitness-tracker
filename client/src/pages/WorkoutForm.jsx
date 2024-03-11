@@ -35,7 +35,6 @@ const WorkoutForm = () => {
             padding: '20px',
             marginBottom: '20px',
             boxShadow: '25 0 10px rgba(25, 25, 25, 25.1)',
-            border: '10px solid #dcdcdc',
             backgroundColor: 'lightgray',
             borderBlockColor: '#B9E8EF',
             width: '600px',
@@ -85,7 +84,6 @@ const WorkoutForm = () => {
                         // // borderBlockColor: 'navy',
                         // borderRadius: '25px'
                         // fontSize: '25px',
-                        color: 'grey',
                         // width: '400px',
                         // marginBottom: '25px'
 
@@ -108,7 +106,6 @@ const WorkoutForm = () => {
                         marginBottom: '20px',
                         color: 'navy',
                         width: '350px',
-                        color: 'grey',
                         // border: '15px solid #ccc',
                         // borderBlockColor: 'navy',
                         // borderRadius: '25PX'

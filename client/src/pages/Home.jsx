@@ -12,13 +12,13 @@ const Home = () => {
     console.log(workouts)
     return (
         <main>
-            <h2>Community Workouts</h2>
+            <h2 style={{color: 'navy', fontSize: '25px'}}>Community Workouts</h2>
             {loading ? (
                 <div>Loading...</div>
             ) : (
                 workouts && workouts.map((workout) => (
                     
-                <div key={workout._id} className="card" style={{ border: '5px solid #ccc', padding: '10px', margin: '20px', borderRadius: '5px', }} >
+                <div key={workout._id} className="card" style={{ border: '5px solid #ccc', padding: '10px', margin: '20px', borderRadius: '5px', justifyContent: 'space-between', width: '500px', flexDirection: 'column', borderColor: '#B9E8EF'}} >
                     <Workout key={workout._id} workout={workout} />
                 </div>)
                 ))}
