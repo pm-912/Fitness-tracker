@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 
 
-function Workout({workouts}) {
+function Workout({ workout }) {
     return (
         <div className="">
-            {workouts && workouts.map((workout) => (
-                <Link to={`/workouts/${workout._id}`}>
+            
+                <Link to={`/SingleWorkout`} key={workout._id} workout={workout}>
                     <div>
                         <h3>User</h3>
                         <p>{workout.title}</p>
@@ -13,8 +13,7 @@ function Workout({workouts}) {
                         <p>{workout.createdAt}</p>
                     </div>
                 </Link>
-            )
-            )}
+            
         </div>
     )
 }
