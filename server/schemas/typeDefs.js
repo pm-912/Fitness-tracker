@@ -11,7 +11,7 @@ const typeDefs = `
         _id: ID!
         title: String!
         details: String
-        date: String
+        createdAt: String
         type: String
         duration: String
         comments: [Comment]
@@ -19,9 +19,9 @@ const typeDefs = `
 
     type Comment {
         _id: ID!
-        date: String
-        author: User!
-        content: String!
+        createdAt: String
+        commentAuthor: User!
+        commentText: String!
     }
 
     type Auth {

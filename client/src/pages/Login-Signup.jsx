@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
-import { LOGIN_USER, ADD_USER } from './mutations'; // importing the mutations
+import { LOGIN_USER, ADD_USER } from '../utils/mutations'; // importing the mutations
 
 const Auth = ({ isLogin }) => {
   const [email, setEmail] = useState('');
