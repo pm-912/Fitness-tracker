@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
-import { LOGIN_USER, ADD_USER } from './mutations'; // importing the mutations
+import { LOGIN_USER, ADD_USER } from '../utils/mutations'; // importing the mutations
+import { useNavigate } from 'react-router-dom';
 
 const Auth = ({ isLogin }) => {
   const [email, setEmail] = useState('');
@@ -35,7 +36,7 @@ const Auth = ({ isLogin }) => {
 
 
   return (
-   <div style={{...styles.card, background:'lightgray', borderColor: 'navy', width: '300px', height: '500px', borderBlockStartColor: 'navy', border}} >
+   <div style={{...styles.card, background:'lightgray', borderColor: '#B9E8EF', width: '300px', height: '500px', borderBlockStartColor: '#B9E8EF', }} >
    <br></br>
       <h2 style={{
                 fontSize: '50px',

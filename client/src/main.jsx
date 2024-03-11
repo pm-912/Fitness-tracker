@@ -8,7 +8,7 @@ import Home from './pages/Home';
 import LoginSignup from './pages/Login-Signup';
 import Logout from './pages/Logout';
 import SingleWorkout from './pages/SingleWorkout';
-// import UserWorkout from 'pages/UserWorkout';
+import UserWorkout from './pages/UserWorkout';
 import WorkoutForm from './pages/WorkoutForm';
 
 const router = createBrowserRouter([
@@ -27,11 +27,11 @@ const router = createBrowserRouter([
         path: '/Logout',
         element: <Logout />
       }, {
-        path: '/SingleWorkout',
+        path: '/SingleWorkout/:Workoutid',
         element: <SingleWorkout />
       }, {
         path: '/UserWorkout',
-        element: <h1>not implemented</h1>//<UserWorkout />
+        element: <UserWorkout />
       },{
         path: '/WorkoutForm',
         element: <WorkoutForm />

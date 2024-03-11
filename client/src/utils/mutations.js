@@ -133,7 +133,8 @@ export const ADD_COMMENT = gql`
 export const DELETE_COMMENT = gql`
     mutation deleteComment(
         $workoutId: ID! 
-        $commentId: ID! {
+        $commentId: ID!
+     ) {
             deleteComment(
                 workoutId: $workoutId
                 commentId: $commentId
@@ -151,7 +152,7 @@ export const DELETE_COMMENT = gql`
                     createdAt
             }
         }
-    )
+    }
 `;
 // create file that exports mutations for client side use
 // Login, AddUser, AddWorkout, DeleteWorkout, AddComment, DeleteComment
