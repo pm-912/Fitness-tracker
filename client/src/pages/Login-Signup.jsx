@@ -7,7 +7,7 @@ const Auth = ({ isLogin }) => {
   const [email, setEmail] = useState('');
   const [username, setUsername] = useState(''); 
   const [password, setPassword] = useState('');
-  const history = useHistory();
+  const navigate = useNavigate();
 
   // mutations from files
   const [loginMutation] = useMutation(LOGIN_USER);

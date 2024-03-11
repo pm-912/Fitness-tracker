@@ -11,7 +11,7 @@ const typeDefs = `
         _id: ID!
         title: String!
         details: String
-        date: Date
+        date: String
         type: String
         duration: String
         comments: [Comment]
@@ -19,7 +19,7 @@ const typeDefs = `
 
     type Comment {
         _id: ID!
-        date: Date
+        date: String
         author: User!
         content: String!
     }
@@ -30,7 +30,7 @@ const typeDefs = `
     }
 
     type Query {
-        allWorkouts(_id: ID!): [Workout]
+        allWorkouts: [Workout]
         myWorkouts(_id: ID!): [Workout]
         singleWorkout(_id: ID!): Workout
     }
