@@ -28,7 +28,7 @@ const WorkoutCard = ({ workout, comments, onCommentAdd, onCommentDelete }) => {
             value={newComment}
             onChange={(e) => setNewComment(e.target.value)}
           />
-          <button onClick={handleCommentSubmit}>Post Comment</button>
+          <button onClick={handleCommentSubmit}>Share Comment</button>
         </div>
 
         <div className="posted-comments-container">
