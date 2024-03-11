@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Auth = ({ isLogin }) => {
   const [email, setEmail] = useState('');
-  const [username, setUsername] = useState(''); 
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
@@ -36,78 +36,67 @@ const Auth = ({ isLogin }) => {
 
 
   return (
-   <div style={{...styles.card, background:'lightgray', borderColor: '#B9E8EF', width: '300px', height: '500px', borderBlockStartColor: '#B9E8EF', }} >
-   <br></br>
-      <h2 style={{
-                fontSize: '50px',
-                marginBottom: '20px',
-                color: 'navy',
-           
+    <div style={{ ...styles.card, background: '#DBD3D9', borderColor: '#B9E8EF', width: '300px', height: '500px', borderBlockStartColor: '#B9E8EF', }} >
+      <br></br>
 
-            }}>{isLogin ? 'Login' : 'Sign Up'}</h2>
+      <h2 style={{
+        fontSize: '50px',
+        marginBottom: '20px',
+        color: 'navy',
+
+
+      }}>{isLogin ? 'Login' : 'Sign Up'}</h2>
       <form onSubmit={handleSubmit}>
         <input style={{
-          // width: '100%',
-          // padding: '10px',
-          // margin: '8px 0',
-          // fontSize: '25px',
-          // borderRadius: '25px',
-          // border: '15px solid #ccc',
-          // boxSizing: 'border-box',
-          // borderBlockColor: 'navy'
-                fontSize: '25px',
-                marginBottom: '20px',
-                color: 'navy',
-                width: '300px',
-                height: '25px'
-                
-                
-            }}
+          fontSize: '25px',
+          marginBottom: '20px',
+          color: 'navy',
+          width: '300px',
+          height: '25px'
+        }}
           type="email"
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-         <br></br>
+        <br></br>
+
+
         <input style={{
-          // width: '100%',
-          // padding: '10px',
-          // margin: '8px 0',
-          // fontSize: '25px',
-          // borderRadius: '25px',
-          // border: '15px solid #ccc',
-          // boxSizing: 'border-box',
-          // borderBlockColor: 'navy'
-                fontSize: '25px',
-                marginBottom: '20px',
-                color: 'navy',
-                width: '300px',
-                height: '25px'
-            }}
+          fontSize: '25px',
+          marginBottom: '20px',
+          color: 'navy',
+          width: '300px',
+          height: '25px'
+        }}
           type="password"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
         <br></br>
+
+
         <button style={{
-                   backgroundColor: 'green',
-                   color: 'white',
-                   padding: '25px 25px',
-                   borderRadius: '20px',
-                   border: '25px',
-                   fontSize: '25px',
-                   cursor: 'pointer',
-                   marginTop: '25px',
-                   width: '150px',
-                   height: '80px'
-                  
-            }}
-            type="submit">{isLogin ? 'Login' : 'Sign Up'}</button>
+          backgroundColor: 'green',
+          color: 'white',
+          padding: '25px 25px',
+          borderRadius: '20px',
+          border: '25px',
+          fontSize: '25px',
+          cursor: 'pointer',
+          marginTop: '25px',
+          width: '150px',
+          height: '80px'
+        }}
+          type="submit">{isLogin ? 'Login' : 'Sign Up'}</button>
       </form>
     </div>
   );
 };
+
+
+
 const styles = {
   card: {
     boxShadow: '1 5px 8px rgba(10, 10, 10, 10.1)',
