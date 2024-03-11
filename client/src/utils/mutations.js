@@ -133,8 +133,8 @@ export const ADD_COMMENT = gql`
 export const DELETE_COMMENT = gql`
     mutation deleteComment(
         $workoutId: ID! 
-        $commentId: ID!
-     ) {
+        $commentId: ID! 
+        ){
             deleteComment(
                 workoutId: $workoutId
                 commentId: $commentId
