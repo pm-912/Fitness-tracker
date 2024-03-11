@@ -7,7 +7,7 @@ import { useState } from 'react';
 const Home = () => {
     // const [workouts, setWorkouts] = useState([])
     const { loading, data } = useQuery(QUERY_ALL_WORKOUTS);
-    const workouts = data?.allWorkouts || {}
+    const workouts = data?.allWorkouts || []
     console.log(workouts)
     return (
         <main>
@@ -15,9 +15,11 @@ const Home = () => {
             {loading ? (
                 <div>Loading...</div>
             ) : (
-                <div className="container">
-                    <Workout workout={workouts} />
-                </div>)}
+                workouts && workouts.map((workout) => (
+                <div key={workout._id} className="container">
+                    <Workout key={workout._id} workout={workout} />
+                </div>)
+                ))}
         </main>
     );
 };
