@@ -1,19 +1,20 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
 
 
-function Workout({ workout }) {
+function Workout({workouts}) {
     return (
-
         <div className="">
-            <Link to={`/workouts/${workout._id}`}>
-                <div>
-                    <h3>User</h3>
-                    <p>{workout.title}</p>
-                    <p>{workout.type}</p>
-                    <p>{workout.date}</p>
-                </div>
-            </Link>
+            {workouts && workouts.map((workout) => (
+                <Link to={`/workouts/${workout._id}`}>
+                    <div>
+                        <h3>User</h3>
+                        <p>{workout.title}</p>
+                        <p>{workout.type}</p>
+                        <p>{workout.createdAt}</p>
+                    </div>
+                </Link>
+            )
+            )}
         </div>
     )
 }
