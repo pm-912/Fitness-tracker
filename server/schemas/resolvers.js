@@ -4,7 +4,7 @@ const { signToken, AuthenticationError } = require('../utils/auth')
 const resolvers = {
   Query: {
     allWorkouts: async () => {
-      return await Workout.find();
+      return await Workout.find().populate('workoutUser');
     },
 
     myWorkouts: async (parent, args, context) => {
@@ -18,12 +18,12 @@ const resolvers = {
     },
 
     singleWorkout: async (parent, { _id }, context) => {
-      if (context.user) {
-        const workout = await Workout.findById(_id).populate('comments');
+      // if (context.user) {
+        const workout = await Workout.findById(_id).populate('comments').populate('workoutUser');
 
         return workout;
-      }
-      throw AuthenticationError
+      // }
+      // throw AuthenticationError
     },
 
   },

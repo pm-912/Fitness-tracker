@@ -25,7 +25,10 @@ const userSchema = new Schema({
         minlength: 8
     },
 
-    workouts: [Workout.schema]
+    workouts: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Workout'
+    }]
 });
 
 userSchema.pre('save', async function (next) {

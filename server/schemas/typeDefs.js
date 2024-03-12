@@ -12,6 +12,7 @@ const typeDefs = `
         title: String!
         details: String
         createdAt: String
+        workoutUser: User
         type: String
         duration: String
         comments: [Comment]
