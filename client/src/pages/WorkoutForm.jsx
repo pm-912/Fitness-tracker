@@ -62,7 +62,6 @@ const WorkoutForm = () => {
                         marginBottom: '20px',
                         color: 'navy',
                         width: '350px',
-
                     }}
                         type="text"
                         placeholder="Title"
