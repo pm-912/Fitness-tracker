@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { QUERY_SINGLE_WORKOUT } from '../utils/queries';
 
+
 const WorkoutCard = () => {
   const { _id } = useParams();
   // console.log(_id);
@@ -10,7 +11,7 @@ const WorkoutCard = () => {
   // console.log(data)
   const singleWorkout = data?.singleWorkout || {}
   console.log(singleWorkout)
-
+  
   // const { title, user, type, duration, description } = workout;
   const [newComment, setNewComment] = useState('');
 

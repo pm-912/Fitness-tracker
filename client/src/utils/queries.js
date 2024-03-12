@@ -23,6 +23,8 @@ export const QUERY_MY_WORKOUTS = gql`
             _id
             title
             type
+            duration
+            createdAt
         }
     }
 `;

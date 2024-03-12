@@ -8,7 +8,7 @@ import Home from './pages/Home';
 import LoginSignup from './pages/Login-Signup';
 import Logout from './pages/Logout';
 import SingleWorkout from './pages/Single-Workout';
-// import UserWorkout from 'pages/UserWorkout';
+import UserWorkout from './pages/UserWorkout';
 import WorkoutForm from './pages/WorkoutForm';
 
 const router = createBrowserRouter([
@@ -29,10 +29,12 @@ const router = createBrowserRouter([
       }, {
         path: '/singleworkout/:_id',
         element: <SingleWorkout />
-      }, {
+      }, 
+      {
         path: '/userworkout',
-        element: <h1>not implemented</h1>//<UserWorkout />
-      },{
+        element: <UserWorkout />
+      }, 
+      {
         path: '/workoutform',
         element: <WorkoutForm />
       }
