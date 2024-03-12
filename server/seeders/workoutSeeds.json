@@ -14,7 +14,7 @@
         "duration": "60 minutes"
     },
     {
-        "title": "Pilates",
+        "title": "yoga",
         "workoutUser": "Ludwig van Beethoven",
         "details": "attended an instructor led pilates class",
         "type": "Aerobic",
@@ -24,11 +24,11 @@
         "title": "Zumba",
         "workoutUser": "goatedmountaingoat",
         "details": "First time going to a zumba class... I'm sticking to jumpropes...",
-        "type": "Dance",
+        "type": "cardio",
         "duration": "30 minutes"
     },
     {
-        "title": "Swimming",
+        "title": "yoga",
         "workoutUser": "Claude Debussy",
         "details": "Swam laps",
         "type": "Aerobic",
@@ -38,7 +38,7 @@
         "title": "Yoga",
         "workoutUser": "Chopin",
         "details": "Took a hot yoga class! Sweating",
-        "type": "Anaerobic",
+        "type": "Aerobic",
         "duration": "45 minutes"
     },
     {
@@ -49,7 +49,7 @@
         "duration": "4 hours"
     },
     {
-        "title": "Cycling",
+        "title": "running",
         "workoutUser": "Antonio Vivaldi",
         "details": "A quick workout before going back to compose a symphony masterpiece!",
         "type": "Cardio",
