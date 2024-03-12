@@ -27,16 +27,16 @@ const WorkoutCard = () => {
 
   return (
     <div className="workout-card-container">
-      <div className="workout-card">
-        <h3>{singleWorkout.title}</h3>
+      <div className="workout-card" style={{ border: '1px solid #ccc', padding: '10px', borderRadius: '5px', marginBottom: '20px'}}>
+        <h3 >{singleWorkout.title}</h3>
         <p>User: {singleWorkout.workoutUser?.username}</p>
         <p>Type: {singleWorkout.type}</p>
         <p>Duration: {singleWorkout.duration} minutes</p>
         <p>Details: {singleWorkout.details}</p>
       </div>
 
-      <div className="comments-section">
-        <div className="add-comment-container">
+      <div className="comments-section" style={{ border: '1px solid #ccc', padding: '10px', borderRadius: '5px' }}>
+        <div className="add-comment-container" style={{ marginBottom: '10px' }}>
           <textarea
             placeholder="Add a comment"
             value={newComment}
