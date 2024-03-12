@@ -1,4 +1,6 @@
+import './header.css';
 import { Link } from 'react-router-dom';
+
 import Auth from '../../utils/auth';
 
 const Header = () => {
@@ -6,54 +8,42 @@ const Header = () => {
         event.preventDefault();
         Auth.logout();
     };
-
-
-    const style = {
-        overlay: {
-            position: 'relative',
-            overflow: 'hidden',
-            width: '100vw',
-            height: '100vh',
-        },
-        gradientOverlay: {
-            content: '""',
-            position: 'absolute',
-            width: '100%',
-            height: '100%',
-            background: 'radial-gradient(ellipse at right, rgba(255,0,0,0) 0%,rgba(255,0,0,0) 50%,rgba(185, 232, 239, 1) 50%,rgba(185, 232, 239, 1) 100%)',
-            zIndex: -1
-        },
-        content: {
-            position: 'relative',
-            zIndex: 1,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            color: '#000', // Set text color
-        },
-    }
-    // const style = {
-    //     overlay: {
-    //         position: 'absolute',
-    //         width: '300%',
-    //         height: '300%',
-    //         top: '-45%',
-    //         left: '-100%',
-    //         background: 'radial-gradient(ellipse at right, rgba(255,0,0,0) 0%,rgba(255,0,0,0) 50%,rgba(185, 232, 239, 1) 50%,rgba(185, 232, 239, 1) 100%)',
-
-    //     }, 
-
-    // }
     return (
-        <header style={style.overlay}>
-            <div style={style.gradientOverlay}></div>
-            <div style={style.content}>
-                <Link>
-                </Link>
+        <header className="bg-primary text-light mb-4 py-3 flex-row align-center">
+            <div className="container flex-row justify-space-between-lg justify-center align-center">
+                <div className='curve'>
+                    <div>
+                        <Link className="text-light" to="/">
+                            <h1 className="m-0">Tech Thoughts</h1>
+                        </Link>
+                        <p className="m-0">Get into the mind of a programmer.</p>
+                    </div>
+                    <div>
+                        {Auth.loggedIn() ? (
+                            <>
+                                <Link className="btn btn-lg btn-info m-2" to="/me">
+                                    {Auth.getProfile().data.username}'s profile
+                                </Link>
+                                <button className="btn btn-lg btn-light m-2" onClick={logout}>
+                                    Logout
+                                </button>
+                            </>
+                        ) : (
+                            <>
+                                <Link className="btn btn-lg btn-info m-2" to="/login">
+                                    Login
+                                </Link>
+                                <Link className="btn btn-lg btn-light m-2" to="/signup">
+                                    Signup
+                                </Link>
+                            </>
+                        )}
+                    </div>
+                </div>
+                <div className='more'></div>
             </div>
         </header>
-    )
+    );
 };
-
 
 export default Header;

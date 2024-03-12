@@ -30,15 +30,65 @@
       left: 50%;
       bottom: 0;
       transform: translateX(-50%);
+      border-radius: 100vw;
+      width: 200%;
+      height: 300vh;
+      z-index: -1;
+    }
+  }
+
+  .more {
+    background-color: silver;
+    margin: 0;
+    width: 300vw;
+    padding: 1rem 2rem;
+    text-align: center;
+  }
+
+  /* header.css */
+/* * {
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
+    }
+    
+    body {
+      font-family: sans-serif;
+    }
+    
+    .header {
+      background-color: silver;
+    }
+    
+    .curve {
+      color: white;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      padding: 3rem 2rem;
+      border: 1px solid red;
+    }
+    
+    .curve::before {
+      content: '';
+      display: block;
+      background: radial-gradient(ellipse at center, rgba(0,0,0,.1) 25%,rgba(0,0,0,1) 100%);
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
       border-radius: 150vw;
       width: 300vw;
       height: 300vw;
       z-index: -1;
     }
-  }
-  
-  .more {
-    background-color: silver;
-    padding: 1rem 2rem;
-    text-align: center;
-  }
+    
+    .more {
+      background-color: silver;
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+    
+    .logout-btn {
+      margin-top: 1rem; /* Example margin for logout button */
+    
