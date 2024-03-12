@@ -84,8 +84,8 @@ const Auth = ({ isLogin }) => {
 
 
   return (
-    <div style={{display:'flex',}}>
-      <div style={{ ...styles.card, background: 'lightgray', borderColor: '#978E94', width: '400px', height: '500px', }} >
+    <div style={{display:'flex', marginTop: '50px',}}>
+      <div style={{ ...styles.card, background: 'lightgray', borderColor: '#978E94', width: '400px', height: '500px', marginLeft: '500px' }} >
         <br></br>
         <h2 style={{
           fontSize: '50px',
@@ -140,7 +140,7 @@ const Auth = ({ isLogin }) => {
         </form>
       </div>
       
-      <div style={{ ...styles.card, background: 'lightgray', borderColor: '#978E94', width: '400px', height: '500px', }} >
+      <div style={{ ...styles.card, background: 'lightgray', borderColor: '#978E94', width: '400px', height: '500px', marginRight: '500px' }} >
         <h2 style={{
           fontSize: '50px',
           marginBottom: '20px',
