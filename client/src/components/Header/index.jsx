@@ -14,13 +14,17 @@ const Header = () => {
             <div className='curve'>
                 <div className='navbar'>
                     <div className='nav-links'>
+                        <div className='header'>
+                        {/* <h1 className='title'>SWEATify</h1> */}
+                        <img className='logo' src={logo} alt="Logo" />
+                    </div>
                         <Link className='nav-btn' to='/'>Home</Link>
 
                         {Auth.loggedIn() ? (
                             <>
                                 <Link className='nav-btn' to='/workoutform'>+ New Workout</Link>
                                 <Link className="nav-btn" to="/userworkout">
-                                    {Auth.getProfile().data.username}'s profile
+                                    {Auth.getProfile().data.username}'s Profile
                                 </Link>
                                 <button className="nav-btn" onClick={logout}>
                                     Logout
@@ -29,19 +33,13 @@ const Header = () => {
                         ) : (
                             <>
                                 <Link className="nav-btn" to="/loginsignup">
-                                    Login
-                                </Link>
-                                <Link className="nav-btn" to="/loginsignup">
-                                    Signup
+                                    Login/Signup
                                 </Link>
                             </>
                         )}
 
                     </div>
-                    <div className='header'>
-                        {/* <h1 className='title'>SWEATify</h1> */}
-                        <img className='logo' src={logo} alt="Logo" />
-                    </div>
+
 
                 </div>
             </div>
