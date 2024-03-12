@@ -96,14 +96,6 @@ const Auth = ({ isLogin }) => {
         }}>Log In</h2>
         <form onSubmit={handleLoginSubmit}>
           <input style={{
-            // width: '100%',
-            // padding: '10px',
-            // margin: '8px 0',
-            // fontSize: '25px',
-            // borderRadius: '25px',
-            // border: '15px solid #ccc',
-            // boxSizing: 'border-box',
-            // borderBlockColor: 'navy'
             fontSize: '25px',
             marginBottom: '20px',
             color: 'navy',
@@ -119,14 +111,6 @@ const Auth = ({ isLogin }) => {
           />
           <br></br>
           <input style={{
-            // width: '100%',
-            // padding: '10px',
-            // margin: '8px 0',
-            // fontSize: '25px',
-            // borderRadius: '25px',
-            // border: '15px solid #ccc',
-            // boxSizing: 'border-box',
-            // borderBlockColor: 'navy'
             fontSize: '25px',
             marginBottom: '20px',
             color: 'navy',
@@ -165,14 +149,6 @@ const Auth = ({ isLogin }) => {
         <form style={styles.form} onSubmit={handleSignupSubmit}>
           <input
             style={{
-              // width: '100%',
-              // padding: '10px',
-              // margin: '8px 0',
-              // fontSize: '25px',
-              // borderRadius: '25px',
-              // border: '15px solid #ccc',
-              // boxSizing: 'border-box',
-              // borderBlockColor: 'navy'
               fontSize: '25px',
               marginBottom: '20px',
               color: 'navy',
@@ -188,14 +164,6 @@ const Auth = ({ isLogin }) => {
           />
           <input
             style={{
-              // width: '100%',
-              // padding: '10px',
-              // margin: '8px 0',
-              // fontSize: '25px',
-              // borderRadius: '25px',
-              // border: '15px solid #ccc',
-              // boxSizing: 'border-box',
-              // borderBlockColor: 'navy'
               fontSize: '25px',
               marginBottom: '20px',
               color: 'navy',
@@ -211,14 +179,6 @@ const Auth = ({ isLogin }) => {
           />
           <input
             style={{
-              // width: '100%',
-              // padding: '10px',
-              // margin: '8px 0',
-              // fontSize: '25px',
-              // borderRadius: '25px',
-              // border: '15px solid #ccc',
-              // boxSizing: 'border-box',
-              // borderBlockColor: 'navy'
               fontSize: '25px',
               marginBottom: '20px',
               color: 'navy',
