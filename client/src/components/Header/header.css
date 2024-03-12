@@ -20,12 +20,11 @@
     padding: 3rem 2rem;
     width: 100%;
     z-index: 2;
-    border: 1px solid red;
     
     &::before {
       content: '';
       display: block;
-      background: radial-gradient(ellipse at center, rgba(0,0,0,.1) 25%,rgba(0,0,0,1) 100%);
+      background: radial-gradient(ellipse at center, rgba(185, 232, 239, 1) 25%,rgba(185, 232, 239, 1) 100%);
       position: absolute;
       left: 50%;
       bottom: 0;
