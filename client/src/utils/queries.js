@@ -40,6 +40,15 @@ export const QUERY_SINGLE_WORKOUT = gql`
             _id
             username
           }
+          comments {
+            _id
+            commentText
+            createdAt
+            commentAuthor {
+                _id
+                username
+            }
+          }
         }
       }
 `;
