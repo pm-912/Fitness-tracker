@@ -32,6 +32,7 @@ function Workout({ workout }) {
                     <img src={chooseImage()} style={{height: '40px'}}/>
 
                         <h3>User</h3>
+                        <h3>{workout.workoutUser?.username}</h3>
                         <p>{workout.title}</p>
                         <p>{workout.type}</p>
                         <p>{workout.createdAt}</p>
