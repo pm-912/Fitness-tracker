@@ -10,10 +10,10 @@ db.once('open', async () => {
     
     await cleanDB('User', 'users');
 
-    await User.create(userSeeds);
+    const newUser = await User.create(userSeeds);
 
     for (let i = 0; i < workoutSeeds.length; i++) {
-      const { _id, workoutUser } = await Workout.create(workoutSeeds[i]);
+      const { _id, workoutUser } = await Workout.create({...workoutSeeds[i], workoutUser: newUser[Math.floor((Math.random() * newUser.length))]._id});
       const user = await User.findOneAndUpdate(
         { username: workoutUser },
         {

@@ -9,6 +9,10 @@ export const QUERY_ALL_WORKOUTS = gql`
             type
             duration
             createdAt
+            workoutUser {
+                username
+                _id
+            }
         }
     }
 `;
@@ -24,15 +28,20 @@ export const QUERY_MY_WORKOUTS = gql`
 `;
 
 export const QUERY_SINGLE_WORKOUT = gql`
-    query singleWorkout($workoutId: ID!) {
-        singleWorkout(_id: $workoutId) {
+    query singleWorkout($id: ID!) {
+        singleWorkout(_id: $id) {
+          _id
+          title
+          details
+          duration
+          createdAt
+          type
+          workoutUser {
             _id
-            title
-            details
-            type
-            duration
+            username
+          }
         }
-    }
+      }
 `;
 // create queries file for front end use
 // allworkouts, myworkouts, singleworkout

@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 function Workout({ workout }) {
     return (
         <div className="">
-            
+            {console.log(workout)}
                 <Link to={{
-                    pathname: `/singleworkout/`, 
+                    pathname: `/singleworkout/${workout._id}`, 
                     state: { workout: workout }}
-                    } key={workout._id}>
+                    } key={workout._id} >
                     <div>
                         <h3>User</h3>
                         <p>{workout.title}</p>
