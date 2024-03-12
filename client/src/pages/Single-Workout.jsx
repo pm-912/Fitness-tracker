@@ -1,7 +1,14 @@
+import { useQuery } from '@apollo/client';
 import React, { useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { QUERY_SINGLE_WORKOUT } from '../utils/queries';
 
-const WorkoutCard = ({ workout, comments, onCommentAdd, onCommentDelete }) => {
-  const { title, user, type, duration, description } = workout;
+const WorkoutCard = ( {props } ) => {
+  const { loading, data } = useQuery(QUERY_SINGLE_WORKOUT);
+  const singleWorkout = data?.singleWorkout(props._id) || {}
+  console.log(singleWorkout);
+
+  // const { title, user, type, duration, description } = workout;
   const [newComment, setNewComment] = useState('');
 
   const handleCommentSubmit = () => {
