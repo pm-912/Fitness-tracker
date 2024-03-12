@@ -24,8 +24,8 @@ export const QUERY_MY_WORKOUTS = gql`
 `;
 
 export const QUERY_SINGLE_WORKOUT = gql`
-    query singleWorkout($workoutId: ID!) {
-        singleWorkout(_id: $workoutId) {
+    query singleWorkout($_id: ID!) {
+        singleWorkout(_id: $_id) {
             _id
             title
             details
