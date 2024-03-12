@@ -14,14 +14,14 @@ const Home = () => {
     return (
         <main>
             <h2
-                style={{ color: 'navy', fontSize: '25px' }}>
+                style={{ color: 'navy', fontSize: '25px', marginLeft: '600px' }}>
                 Community Workouts</h2>
             {loading ? (
                 <div>Loading...</div>
             ) : (
                 <div
                     style={{ display: 'flex', flexWrap: 'wrap', 
-                    justifyContent: 'space-between', 
+                    justifyContent: 'space-between', boxShadow: '0 4px 10px rgba(10, 10, 10, 0.1)',
                     }}>
                     {workouts && workouts.map((workout) => (
                         <div key={workout._id} className="card" style={{
@@ -30,7 +30,8 @@ const Home = () => {
                             width: '30%', boxSizing: 'border-box',
                             borderColor: '#978E94',
                             backgroundColor: '#DBD3D9',
-                            boxShadow: ''
+                           
+                            
                         }}>
                             <Workout workout={workout} />
                         </div>

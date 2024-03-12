@@ -31,23 +31,28 @@ const WorkoutForm = () => {
 
     return (
         <div style={{
-            border: '10px solid #dcdcdc',
+            border: '5px solid #dcdcdc',
             borderRadius: '8px',
             padding: '20px',
             marginBottom: '20px',
-            boxShadow: '25 0 10px rgba(25, 25, 25, 25.1)',
+            boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)', // Corrected boxShadow property
             backgroundColor: '#DBD3D9',
-            borderBlockColor: '#B9E8EF',
-            width: '600px',
-            height: '500px',
-            borderColor: '#B9E8EF'
-
+            width: '800px',
+            height: '600px',
+            borderColor: '#978E94',
+            marginLeft: 'auto', // Align to the center horizontally
+            marginRight: 'auto', // Align to the center horizontally
+            marginTop: '50px',
+            
+            
+           
         }}>
 
             <h2 style={{
                 fontSize: '50px',
                 marginBottom: '20px',
                 color: 'navy',
+                marginLeft: '150px'
             }}>Add New Workout</h2>
             <form onSubmit={handleSubmit} style={{
                 display: 'flex',
@@ -58,10 +63,12 @@ const WorkoutForm = () => {
                     border: '40px'
                 }}>
                     <input style={{
-                        fontSize: '25px',
+                        fontSize: '15px',
                         marginBottom: '20px',
-                        color: 'navy',
+                        color: 'lightgray',
                         width: '350px',
+                        marginLeft: '200px',
+                        height: '40px'
                     }}
                         type="text"
                         placeholder="Title"
@@ -71,10 +78,12 @@ const WorkoutForm = () => {
                     <br></br>
 
                     <select style={{
-                        fontSize: '25px',
+                        fontSize: '15px',
                         marginBottom: '20px',
-                        color: 'navy',
+                        color: 'gray',
                         width: '350px',
+                        marginLeft: '200px',
+                        height: '40px'
 
                     }}
                         value={type} onChange={(e) => setType(e.target.value)}>
@@ -91,10 +100,12 @@ const WorkoutForm = () => {
                     <br></br>
 
                     <select style={{
-                        fontSize: '25px',
+                        fontSize: '15px',
                         marginBottom: '20px',
-                        color: 'navy',
+                        color: 'gray',
                         width: '350px',
+                        marginLeft: '200px',
+                        height: '40px'
                     }}
                         value={duration} onChange={(e) => setDuration(e.target.value)}>
                         <option value="">Select Duration</option>
@@ -104,11 +115,12 @@ const WorkoutForm = () => {
 
 
                     <textarea style={{
-                        fontSize: '25px',
+                        fontSize: '15px',
                         marginBottom: '20px',
                         color: 'navy',
                         width: '500px',
                         height: '50px',
+                        marginLeft: '125px'
                     }}
                         placeholder="Description" // text box for description.
                         value={description}
@@ -130,6 +142,7 @@ const WorkoutForm = () => {
                     width: '400px',
                     display: 'block',
                     margin: 'auto',
+
 
                 }} type="submit">Post Workout</button>
             </form>

@@ -85,12 +85,13 @@ const Auth = ({ isLogin }) => {
 
   return (
     <div>
-      <div style={{ ...styles.card, background: 'lightgray', borderColor: '#B9E8EF', width: '300px', height: '500px', borderBlockStartColor: '#B9E8EF', }} >
+      <div style={{ ...styles.card,display:'flexbox', background: 'lightgray', borderColor: '#978E94', width: '400px', height: '500px', marginTop: '50px', border: '10px' }} >
         <br></br>
         <h2 style={{
           fontSize: '50px',
           marginBottom: '20px',
           color: 'navy',
+          marginLeft: '50px'
 
 
         }}>Log In</h2>
@@ -100,7 +101,8 @@ const Auth = ({ isLogin }) => {
             marginBottom: '20px',
             color: 'navy',
             width: '300px',
-            height: '25px'
+            height: '25px',
+           
 
 
           }}
@@ -133,27 +135,30 @@ const Auth = ({ isLogin }) => {
             cursor: 'pointer',
             marginTop: '25px',
             width: '150px',
-            height: '80px'
+            height: '80px',
+            marginLeft: '50px'
 
           }}
             type="submit">Log In</button>
         </form>
       </div>
-      <div style={{ ...styles.card, background: 'lightgray', borderColor: '#B9E8EF', width: '300px', height: '500px', borderBlockStartColor: '#B9E8EF', }} >
+      <br></br>
+      <div style={{ ...styles.card, display: 'flecbox',background: 'lightgray', borderColor: '#978E94', width: '400px', height: '500px', border: '10px' }} >
         <h2 style={{
           fontSize: '50px',
           marginBottom: '20px',
           color: 'navy',
         }} >
           Sign Up</h2>
-        <form style={styles.form} onSubmit={handleSignupSubmit}>
+        <form  onSubmit={handleSignupSubmit}>
           <input
             style={{
               fontSize: '25px',
               marginBottom: '20px',
               color: 'navy',
               width: '300px',
-              height: '25px'
+              height: '25px',
+              
 
 
             }}
@@ -190,7 +195,19 @@ const Auth = ({ isLogin }) => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button style={styles.button} type="submit">Sign Up</button>
+          <button style={{
+            backgroundColor: 'green',
+            color: 'white',
+            padding: '25px 25px',
+            borderRadius: '20px',
+            border: '25px',
+            fontSize: '25px',
+            cursor: 'pointer',
+            marginTop: '25px',
+            width: '150px',
+            height: '80px'
+
+          }}type="submit">Sign Up</button>
         </form>
       </div>
     </div>
