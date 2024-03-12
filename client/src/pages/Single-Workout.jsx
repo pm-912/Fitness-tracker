@@ -5,9 +5,9 @@ import { QUERY_SINGLE_WORKOUT } from '../utils/queries';
 
 const WorkoutCard = () => {
   const { _id } = useParams();
-  console.log(_id);
-  const { loading, data } = useQuery(QUERY_SINGLE_WORKOUT, {variables: { _id: _id }});
-  console.log(data)
+  // console.log(_id);
+  const { loading, data } = useQuery(QUERY_SINGLE_WORKOUT, {variables: { id: _id }});
+  // console.log(data)
   const singleWorkout = data?.singleWorkout || {}
   console.log(singleWorkout)
 
@@ -25,7 +25,7 @@ const WorkoutCard = () => {
     <div className="workout-card-container">
       <div className="workout-card">
         <h3>{singleWorkout.title}</h3>
-        <p>User</p>
+        <p>User: {singleWorkout.workoutUser?.username}</p>
         <p>Type: {singleWorkout.type}</p>
         <p>Duration: {singleWorkout.duration} minutes</p>
         <p>Details: {singleWorkout.details}</p>
@@ -42,7 +42,7 @@ const WorkoutCard = () => {
         </div>
 
         <div className="posted-comments-container">
-          {comments.map((comment, index) => (
+          {singleWorkout.comments?.map((comment, index) => (
             <div className="comment-box" key={index}>
               <p>{comment}</p>
               <button onClick={() => onCommentDelete(index)}>Delete Comment</button>
