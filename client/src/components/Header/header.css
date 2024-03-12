@@ -8,15 +8,16 @@
     padding: 0;
   }
   
+
   header {
-    background-color: silver;
+    background-color: #D9F8FC;
   }
   
   .curve {
     color: white;
     position: relative;
-    overflow: hidden;
-    text-align: center;
+    overflow: visible;
+    /* text-align: center; */
     padding: 3rem 2rem;
     width: 100%;
     z-index: 2;
@@ -24,6 +25,7 @@
     &::before {
       content: '';
       display: block;
+      box-shadow: 0 4px 4px -2px gray;
       background: radial-gradient(ellipse at center, rgba(185, 232, 239, 1) 25%,rgba(185, 232, 239, 1) 100%);
       position: absolute;
       left: 50%;
@@ -36,10 +38,22 @@
     }
   }
 
+  .nav-btn {
+    display: flex;
+    align-items: end;
+    background: #FFF;
+    padding: 20px 15px;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px gray;
+  }
+
+
   .more {
-    background-color: silver;
+    box-shadow: 0 4px 4px -2px gray;
+    background-color: #D9F8FC;
     margin: 0;
     width: 300vw;
+    height: 10vh;
     padding: 1rem 2rem;
     text-align: center;
   }

@@ -9,39 +9,39 @@ const Header = () => {
         Auth.logout();
     };
     return (
-        <header className="bg-primary text-light mb-4 py-3 flex-row align-center">
-            <div className="container flex-row justify-space-between-lg justify-center align-center">
+        <header className="">
                 <div className='curve'>
-                    <div>
-                        <Link className="text-light" to="/">
-                            <h1 className="m-0">Tech Thoughts</h1>
-                        </Link>
-                        <p className="m-0">Get into the mind of a programmer.</p>
-                    </div>
-                    <div>
-                        {Auth.loggedIn() ? (
-                            <>
-                                <Link className="btn btn-lg btn-info m-2" to="/me">
-                                    {Auth.getProfile().data.username}'s profile
-                                </Link>
-                                <button className="btn btn-lg btn-light m-2" onClick={logout}>
-                                    Logout
-                                </button>
-                            </>
-                        ) : (
-                            <>
-                                <Link className="btn btn-lg btn-info m-2" to="/login">
-                                    Login
-                                </Link>
-                                <Link className="btn btn-lg btn-light m-2" to="/signup">
-                                    Signup
-                                </Link>
-                            </>
-                        )}
+                    <div className='navbar'>
+                        <div>
+                            <h1 className='header'>SWEATify</h1>
+                            <p>Get into the mind of a programmer.</p>
+                        </div>
+                            <div className='nav-links'>
+                                <Link className='nav-btn' to='/workoutform'>+ New Workout</Link>
+                                {Auth.loggedIn() ? (
+                                    <>
+                                        <Link className="nav-btn" to="/userworkout">
+                                            {Auth.getProfile().data.username}'s profile
+                                        </Link>
+                                        <button className="nav-btn" onClick={logout}>
+                                            Logout
+                                        </button>
+                                    </>
+                                ) : (
+                                    <>
+                                        <Link className="nav-btn" to="/loginsignup">
+                                            Login
+                                        </Link>
+                                        <Link className="nav-btn" to="/loginsignup">
+                                            Signup
+                                        </Link>
+                                    </>
+                                )}
+                                
+                            </div>
                     </div>
                 </div>
                 <div className='more'></div>
-            </div>
         </header>
     );
 };
