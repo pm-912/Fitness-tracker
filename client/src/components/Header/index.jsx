@@ -1,4 +1,5 @@
 import './header.css';
+import logo from '../../assets/logo/SWEATify-logo.png'
 import { Link } from 'react-router-dom';
 
 import Auth from '../../utils/auth';
@@ -10,38 +11,41 @@ const Header = () => {
     };
     return (
         <header className="">
-                <div className='curve'>
-                    <div className='navbar'>
-                        <div>
-                            <h1 className='header'>SWEATify</h1>
-                            <p>Get into the mind of a programmer.</p>
-                        </div>
-                            <div className='nav-links'>
+            <div className='curve'>
+                <div className='navbar'>
+                    <div className='nav-links'>
+                        <Link className='nav-btn' to='/'>Home</Link>
+
+                        {Auth.loggedIn() ? (
+                            <>
                                 <Link className='nav-btn' to='/workoutform'>+ New Workout</Link>
-                                {Auth.loggedIn() ? (
-                                    <>
-                                        <Link className="nav-btn" to="/userworkout">
-                                            {Auth.getProfile().data.username}'s profile
-                                        </Link>
-                                        <button className="nav-btn" onClick={logout}>
-                                            Logout
-                                        </button>
-                                    </>
-                                ) : (
-                                    <>
-                                        <Link className="nav-btn" to="/loginsignup">
-                                            Login
-                                        </Link>
-                                        <Link className="nav-btn" to="/loginsignup">
-                                            Signup
-                                        </Link>
-                                    </>
-                                )}
-                                
-                            </div>
+                                <Link className="nav-btn" to="/userworkout">
+                                    {Auth.getProfile().data.username}'s profile
+                                </Link>
+                                <button className="nav-btn" onClick={logout}>
+                                    Logout
+                                </button>
+                            </>
+                        ) : (
+                            <>
+                                <Link className="nav-btn" to="/loginsignup">
+                                    Login
+                                </Link>
+                                <Link className="nav-btn" to="/loginsignup">
+                                    Signup
+                                </Link>
+                            </>
+                        )}
+
                     </div>
+                    <div className='header'>
+                        {/* <h1 className='title'>SWEATify</h1> */}
+                        <img className='logo' src={logo} alt="Logo" />
+                    </div>
+
                 </div>
-                <div className='more'></div>
+            </div>
+            <div className='more'></div>
         </header>
     );
 };
