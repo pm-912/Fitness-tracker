@@ -27,7 +27,7 @@ const router = createBrowserRouter([
         path: '/logout',
         element: <Logout />
       }, {
-        path: '/singleworkout',
+        path: '/singleworkout/:_id',
         element: <SingleWorkout />
       }, {
         path: '/userworkout',

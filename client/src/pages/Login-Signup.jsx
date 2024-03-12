@@ -84,17 +84,16 @@ const Auth = ({ isLogin }) => {
 
 
   return (
-    <div>
-      <div style={{ ...styles.card,display:'flexbox', background: 'lightgray', borderColor: '#978E94', width: '400px', height: '500px', marginTop: '50px', border: '10px' }} >
+    <div style={{display:'flex',}}>
+      <div style={{ ...styles.card, background: 'lightgray', borderColor: '#978E94', width: '400px', height: '500px', }} >
         <br></br>
         <h2 style={{
           fontSize: '50px',
           marginBottom: '20px',
           color: 'navy',
           marginLeft: '50px'
+          }}>Log In</h2>
 
-
-        }}>Log In</h2>
         <form onSubmit={handleLoginSubmit}>
           <input style={{
             fontSize: '25px',
@@ -102,9 +101,6 @@ const Auth = ({ isLogin }) => {
             color: 'navy',
             width: '300px',
             height: '25px',
-           
-
-
           }}
             type="email"
             placeholder="Email"
@@ -112,6 +108,7 @@ const Auth = ({ isLogin }) => {
             onChange={(e) => setEmail(e.target.value)}
           />
           <br></br>
+          
           <input style={{
             fontSize: '25px',
             marginBottom: '20px',
@@ -142,8 +139,8 @@ const Auth = ({ isLogin }) => {
             type="submit">Log In</button>
         </form>
       </div>
-      <br></br>
-      <div style={{ ...styles.card, display: 'flecbox',background: 'lightgray', borderColor: '#978E94', width: '400px', height: '500px', border: '10px' }} >
+      
+      <div style={{ ...styles.card, background: 'lightgray', borderColor: '#978E94', width: '400px', height: '500px', }} >
         <h2 style={{
           fontSize: '50px',
           marginBottom: '20px',
@@ -205,7 +202,8 @@ const Auth = ({ isLogin }) => {
             cursor: 'pointer',
             marginTop: '25px',
             width: '150px',
-            height: '80px'
+            height: '80px',
+            marginLeft: '50px'
 
           }}type="submit">Sign Up</button>
         </form>

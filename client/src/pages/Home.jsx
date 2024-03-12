@@ -14,7 +14,7 @@ const Home = () => {
     return (
         <main>
             <h2
-                style={{ color: 'navy', fontSize: '25px', marginLeft: '600px' }}>
+                style={{ color: 'navy', fontSize: '25px', marginLeft: '800px' }}>
                 Community Workouts</h2>
             {loading ? (
                 <div>Loading...</div>
@@ -26,10 +26,11 @@ const Home = () => {
                     {workouts && workouts.map((workout) => (
                         <div key={workout._id} className="card" style={{
                             border: '3px solid #ccc',
-                            padding: '10px', margin: '20px', borderRadius: '5px',
-                            width: '30%', boxSizing: 'border-box',
+                            padding: '10px', margin: '20px', borderRadius: '15px',
+                            width: '30%',
                             borderColor: '#978E94',
                             backgroundColor: '#DBD3D9',
+                            boxShadow: '20px'
                            
                             
                         }}>

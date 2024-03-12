@@ -35,7 +35,7 @@ const WorkoutForm = () => {
             borderRadius: '8px',
             padding: '20px',
             marginBottom: '20px',
-            boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)', // Corrected boxShadow property
+            boxShadow: '20 20px 10px rgba(20, 20, 20, 20.1)', // Corrected boxShadow property
             backgroundColor: '#DBD3D9',
             width: '800px',
             height: '600px',
