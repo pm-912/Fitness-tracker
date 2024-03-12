@@ -10,6 +10,7 @@ const Home = () => {
 
 
     console.log(workouts)
+    // console.log(workouts)
     return (
         <main>
             <h2
@@ -19,14 +20,17 @@ const Home = () => {
                 <div>Loading...</div>
             ) : (
                 <div
-                    style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>
+                    style={{ display: 'flex', flexWrap: 'wrap', 
+                    justifyContent: 'space-between', 
+                    }}>
                     {workouts && workouts.map((workout) => (
                         <div key={workout._id} className="card" style={{
-                            border: '5px solid #ccc',
+                            border: '3px solid #ccc',
                             padding: '10px', margin: '20px', borderRadius: '5px',
                             width: '30%', boxSizing: 'border-box',
-                            borderColor: '#B9E8EF',
-                            backgroundColor: '#DBD3D9'
+                            borderColor: '#978E94',
+                            backgroundColor: '#DBD3D9',
+                            boxShadow: ''
                         }}>
                             <Workout workout={workout} />
                         </div>

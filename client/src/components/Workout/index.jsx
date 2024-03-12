@@ -5,7 +5,10 @@ function Workout({ workout }) {
     return (
         <div className="">
             
-                <Link to={`/SingleWorkout`} key={workout._id} workout={workout}>
+                <Link to={{
+                    pathname: `/singleworkout/`, 
+                    state: { workout: workout }}
+                    } key={workout._id}>
                     <div>
                         <h3>User</h3>
                         <p>{workout.title}</p>

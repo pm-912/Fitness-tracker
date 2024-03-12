@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
+import { useParams } from 'react-router-dom';
 
-const WorkoutCard = ({ workout, comments, onCommentAdd, onCommentDelete }) => {
-  const { title, user, type, duration, description } = workout;
+const WorkoutCard = (props) => {
+  console.log(props)
+  const workoutId = useParams();
+  console.log(workoutId);
+  // const { title, user, type, duration, description } = workout;
   const [newComment, setNewComment] = useState('');
 
   const handleCommentSubmit = () => {
