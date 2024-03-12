@@ -14,13 +14,11 @@ const WorkoutCard = () => {
   
   // const { title, user, type, duration, description } = workout;
   const [newComment, setNewComment] = useState('');
+  const [comments, setComments] = useState(singleWorkout.comments || []);
 
-  const onCommentAdd = (newComment) => {
-    onCommentAdd.push(singleWorkout.comments)
-  }
   const handleCommentSubmit = () => {
     if (newComment.trim() !== '') {
-      onCommentAdd(newComment);
+      setComments([...comments, newComment]);
       setNewComment('');
     }
   };
