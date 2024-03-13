@@ -1,4 +1,4 @@
-import { useQuery } from '@apollo/client';
+import { useMutation, useQuery } from '@apollo/client';
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { QUERY_SINGLE_WORKOUT } from '../utils/queries';
@@ -7,9 +7,11 @@ import cardio from '../assets/icons/treadmill.png'
 import lifting from '../assets/icons/training.png'
 import yoga from '../assets/icons/buddhist-yoga-pose.png'
 import Workout from '../components/Workout';
+import { ADD_COMMENT } from '../utils/mutations';
 
 const WorkoutCard = () => {
   const { _id } = useParams();
+  const [addComment] = useMutation(ADD_COMMENT);
   // console.log(_id);
   const { loading, data } = useQuery(QUERY_SINGLE_WORKOUT, { variables: { id: _id } });
 
@@ -39,6 +41,7 @@ const WorkoutCard = () => {
 
   const handleCommentSubmit = () => {
     if (newComment.trim() !== '') {
+      addComment({ _id, newComment });
       setComments([...comments, newComment]);
       setNewComment('');
     }
