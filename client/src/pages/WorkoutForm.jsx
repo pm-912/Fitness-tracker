@@ -57,12 +57,13 @@ const WorkoutForm = () => {
             }}>
                 <div className="workout-box" style={{
                     marginBottom: '20px',
-                    border: '40px'
+                    border: '40px',
+                    color: 'black'
                 }}>
                     <input style={{
                         fontSize: '15px',
                         marginBottom: '20px',
-                        color: 'lightgray',
+                        color: 'black',
                         width: '350px',
                         marginLeft: '200px',
                         height: '40px'
@@ -77,7 +78,7 @@ const WorkoutForm = () => {
                     <select style={{
                         fontSize: '15px',
                         marginBottom: '20px',
-                        color: 'gray',
+                        color: 'black',
                         width: '350px',
                         marginLeft: '200px',
                         height: '40px'
@@ -99,7 +100,7 @@ const WorkoutForm = () => {
                     <select style={{
                         fontSize: '15px',
                         marginBottom: '20px',
-                        color: 'gray',
+                        color: 'black',
                         width: '350px',
                         marginLeft: '200px',
                         height: '40px'
@@ -114,7 +115,7 @@ const WorkoutForm = () => {
                     <textarea style={{
                         fontSize: '15px',
                         marginBottom: '20px',
-                        color: 'navy',
+                        color: 'black',
                         width: '500px',
                         height: '50px',
                         marginLeft: '125px'

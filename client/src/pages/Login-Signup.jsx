@@ -95,7 +95,7 @@ const Auth = ({ isLogin }) => {
         <h2 style={{
           fontSize: '50px',
           marginBottom: '20px',
-          color: 'navy',
+          color: 'black',
           marginLeft: '50px'
           }}>Log In</h2>
 
@@ -103,7 +103,7 @@ const Auth = ({ isLogin }) => {
           <input style={{
             fontSize: '25px',
             marginBottom: '20px',
-            color: 'navy',
+            color: 'black',
             width: '300px',
             height: '25px',
           }}
@@ -117,7 +117,7 @@ const Auth = ({ isLogin }) => {
           <input style={{
             fontSize: '25px',
             marginBottom: '20px',
-            color: 'navy',
+            color: 'black',
             width: '300px',
             height: '25px'
           }}
@@ -149,7 +149,7 @@ const Auth = ({ isLogin }) => {
         <h2 style={{
           fontSize: '50px',
           marginBottom: '20px',
-          color: 'navy',
+          color: 'black',
           marginLeft: '50px'
         }} >
           Sign Up</h2>
@@ -158,7 +158,7 @@ const Auth = ({ isLogin }) => {
             style={{
               fontSize: '25px',
               marginBottom: '20px',
-              color: 'navy',
+              color: 'black',
               width: '300px',
               height: '25px',
               
@@ -172,7 +172,7 @@ const Auth = ({ isLogin }) => {
             style={{
               fontSize: '25px',
               marginBottom: '20px',
-              color: 'navy',
+              color: 'black',
               width: '300px',
               height: '25px'
 
@@ -187,7 +187,7 @@ const Auth = ({ isLogin }) => {
             style={{
               fontSize: '25px',
               marginBottom: '20px',
-              color: 'navy',
+              color: 'black',
               width: '300px',
               height: '25px'
             }}

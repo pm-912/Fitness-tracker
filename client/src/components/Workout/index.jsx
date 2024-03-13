@@ -16,12 +16,12 @@ function Workout({ workout }) {
                 return lifting
             case "Yoga":
                 return yoga
-          
 
             default: 
                 return sport //maybe replace with loading or unavailable img as back up
         }
     }
+    
     return (
         <div className="">
             {console.log(workout)}
