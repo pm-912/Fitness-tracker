@@ -8,20 +8,15 @@ import {
 import { setContext } from '@apollo/client/link/context';
 import { Outlet } from 'react-router-dom';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import Header from './components/Header';
-
 
 
 
 const httpLink = createHttpLink({
   uri: '/graphql',
 });
-
-
-
-
 
 
 const authLink = setContext((_, { headers }) => {
@@ -39,9 +34,6 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 function App() {
-  const [count, setCount] = useState(0)
-
-  
 
   return (
     <ApolloProvider client={client}>
@@ -52,7 +44,7 @@ function App() {
   </ApolloProvider>
 );
 }
-   
+
     //   <div>
     //     <a href="https://vitejs.dev" target="_blank">
     //       <img src={viteLogo} className="logo" alt="Vite logo" />

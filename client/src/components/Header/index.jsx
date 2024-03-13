@@ -1,10 +1,11 @@
 import './header.css';
 import logo from '../../assets/logo/SWEATify-logo.png'
 import { Link } from 'react-router-dom';
-
 import Auth from '../../utils/auth';
 
-const Header = () => {
+
+const Header = ({}) => {
+
     const logout = (event) => {
         event.preventDefault();
         Auth.logout();
@@ -28,7 +29,7 @@ const Header = () => {
                                     </Link>
                                     <button className="nav-btn" onClick={logout}>
                                         Logout
-                                    </button>
+                                    </button> 
                                 </>
                             ) : (
                                 <>

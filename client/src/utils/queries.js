@@ -54,5 +54,22 @@ export const QUERY_SINGLE_WORKOUT = gql`
         }
       }
 `;
+
+export const QUERY_ME = gql`
+    query Query {
+        me {
+        _id
+        username
+        email
+        password
+        workouts {
+            _id
+            createdAt
+            title
+            type
+        }
+        }
+    }
+`
 // create queries file for front end use
 // allworkouts, myworkouts, singleworkout

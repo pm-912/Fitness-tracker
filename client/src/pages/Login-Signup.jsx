@@ -7,18 +7,20 @@ import { useNavigate } from 'react-router-dom';
 
 const styles = {
   card: {
-    boxShadow: '1 5px 8px rgba(10, 10, 10, 10.1)',
-    borderRadius: '8px',
+   
+    
     padding: '50px',
     maxWidth: '800px',
     margin: 'auto',
     background: '#ffffff',
-    border: '20px solid #e0e0e0',
+    border: '5px solid #e0e0e0',
+    
   },
   container: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    boxShadow: '10 10px 80px rgba(10, 10, 10, 10.1)',
   },
   title: {
     fontSize: '50px',
@@ -51,9 +53,12 @@ const styles = {
 };
 
 const Auth = ({ isLogin }) => {
-  const [email, setEmail] = useState('');
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [loginEmail, setLoginEmail] = useState('');
+  const [loginPassword, setLoginPassword] = useState('');
+
+  const [signupEmail, setSignupEmail] = useState('');
+  const [signupUsername, setSignupUsername] = useState('');
+  const [signupPassword, setSignupPassword] = useState('');
   const navigate = useNavigate();
 
   // mutations from files
@@ -63,9 +68,9 @@ const Auth = ({ isLogin }) => {
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await loginMutation({ variables: { email, password } });
-      localStorage.setItem('token', data.login.token);
-      navigate('/Home');
+      const { data } = await loginMutation({ variables: { email: loginEmail, password: loginPassword } });
+      localStorage.setItem('id_token', data.login.token);
+      navigate('/workoutform');
     } catch (error) {
       console.error('Login Error:', error);
     }
@@ -74,9 +79,9 @@ const Auth = ({ isLogin }) => {
   const handleSignupSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await signupMutation({ variables: { email, username, password } });
-      localStorage.setItem('token', data.addUser.token);
-      navigate('/Home');
+      const { data } = await signupMutation({ variables: { email: signupEmail, username: signupUsername, password: signupPassword } });
+      localStorage.setItem('id_token', data.addUser.token);
+      navigate('/workoutform');
     } catch (error) {
       console.error('Signup Error:', error);
     }
@@ -84,8 +89,8 @@ const Auth = ({ isLogin }) => {
 
 
   return (
-    <div style={{display:'flex', marginTop: '50px',}}>
-      <div style={{ ...styles.card, background: 'lightgray', borderColor: '#978E94', width: '400px', height: '500px', marginLeft: '500px' }} >
+    <div style={{display:'flex', marginTop: '50px', marginRight: '10px', }}>
+      <div style={{ ...styles.card, background: '#DBD3D9', borderColor: '#978E94', width: '400px', height: '500px', }} >
         <br></br>
         <h2 style={{
           fontSize: '50px',
@@ -104,8 +109,8 @@ const Auth = ({ isLogin }) => {
           }}
             type="email"
             placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={loginEmail}
+            onChange={(e) => setLoginEmail(e.target.value)}
           />
           <br></br>
           
@@ -116,10 +121,10 @@ const Auth = ({ isLogin }) => {
             width: '300px',
             height: '25px'
           }}
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+          type="password"
+          placeholder="Password"
+          value={loginPassword}
+          onChange={(e) => setLoginPassword(e.target.value)}
           />
           <br></br>
           <button style={{
@@ -140,11 +145,12 @@ const Auth = ({ isLogin }) => {
         </form>
       </div>
       
-      <div style={{ ...styles.card, background: 'lightgray', borderColor: '#978E94', width: '400px', height: '500px', marginRight: '500px' }} >
+      <div style={{ ...styles.card, background: '#DBD3D9', borderColor: '#978E94', width: '400px', height: '500px' , marginLeft: '0px', }} >
         <h2 style={{
           fontSize: '50px',
           marginBottom: '20px',
           color: 'navy',
+          marginLeft: '50px'
         }} >
           Sign Up</h2>
         <form  onSubmit={handleSignupSubmit}>
@@ -156,13 +162,11 @@ const Auth = ({ isLogin }) => {
               width: '300px',
               height: '25px',
               
-
-
             }}
             type="email"
             placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={signupEmail}
+            onChange={(e) => setSignupEmail(e.target.value)}
           />
           <input
             style={{
@@ -176,8 +180,8 @@ const Auth = ({ isLogin }) => {
             }}
             type="text"
             placeholder="Username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            value={signupUsername}
+            onChange={(e) => setSignupUsername(e.target.value)}
           />
           <input
             style={{
@@ -189,8 +193,8 @@ const Auth = ({ isLogin }) => {
             }}
             type="password"
             placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            value={signupPassword}
+            onChange={(e) => setSignupPassword(e.target.value)}
           />
           <button style={{
             backgroundColor: 'green',

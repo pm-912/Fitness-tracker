@@ -2,6 +2,10 @@ import { useQuery } from '@apollo/client';
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { QUERY_SINGLE_WORKOUT } from '../utils/queries';
+import sport from '../assets/icons/sport.png'
+import cardio from '../assets/icons/treadmill.png'
+import lifting from '../assets/icons/training.png'
+import yoga from '../assets/icons/buddhist-yoga-pose.png'
 import Workout from '../components/Workout';
 
 const WorkoutCard = () => {
@@ -9,10 +13,26 @@ const WorkoutCard = () => {
   // console.log(_id);
   const { loading, data } = useQuery(QUERY_SINGLE_WORKOUT, { variables: { id: _id } });
 
+
   // console.log(data)
   const singleWorkout = data?.singleWorkout || {}
   console.log(singleWorkout)
 
+  const chooseImage =() => {
+    switch(singleWorkout.type){
+        case  "Aerobic":
+            return sport
+        case "Cardio":
+            return cardio
+        case "Lifting":
+            return lifting
+        case "Yoga":
+            return yoga
+
+        default: 
+            return sport //maybe replace with loading or unavailable img as back up
+    }
+};
   // const { title, user, type, duration, description } = workout;
   const [newComment, setNewComment] = useState('');
   const [comments, setComments] = useState(singleWorkout.comments || []);
@@ -34,21 +54,22 @@ const WorkoutCard = () => {
         <div className="workout-card" 
         style={{ 
           border: '5px solid #ccc', 
-          padding: '10px', 
+          padding: '0px', 
           borderRadius: '5px', 
-          margin: '20px 200px 20px 20px',
+          margin: '50px 300px 50px 300px',
           backgroundColor: 'darkgray',        
           display: 'grid',
           gridTemplateColumns: 'repeat(3, .5fr)',
           gridTemplateRows: 'repeat(3, .5fr)',
-          position: 'relative'
+          position: 'relative',
+          boxShadow: '2px 2px 5px gray'
           }}>
           <div>
-            <h3 style={{
+            <h2 style={{
               color: 'white',
               display: 'flex',
               justifyContent: 'center',
-            }}>{singleWorkout.title}</h3>
+            }}>{singleWorkout.title}</h2>
           </div>
 
           <div
@@ -58,7 +79,8 @@ const WorkoutCard = () => {
             display: 'flex',
             justifyContent: 'center',
           }}>
-            <Workout workout={data} />
+            {/* <Workout workout={singleWorkout} /> */}
+            <img src={chooseImage()} style={{height: '150px'}}/>
           </div>
 
           <div 
@@ -71,7 +93,7 @@ const WorkoutCard = () => {
             top: '40px',
 
           }}>
-            <p> {singleWorkout.workoutUser?.username}</p>
+            <h4> {singleWorkout.workoutUser?.username}</h4>
             <p>{singleWorkout.type}</p>
             <p>Duration: {singleWorkout.duration}</p>
             <p>Details: <br></br><br></br> {singleWorkout.details}</p>
