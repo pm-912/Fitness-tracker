@@ -38,7 +38,7 @@ const typeDefs = `
     }
 
     input WorkoutArgs {
-        workoutUser: ID!
+       
         title: String
         details: String
         type: String

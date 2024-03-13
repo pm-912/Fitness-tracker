@@ -98,7 +98,7 @@
     opacity: 1;
   }
 
-  .more {
+  /* .more {
     box-shadow: 0 4px 4px -2px gray;
     background: radial-gradient(at bottom, #8664B6 2%,rgba(185, 232, 239, 1) 100%);
     margin: 0;
@@ -106,4 +106,4 @@
     height: 10vh;
     padding: 1rem 2rem;
     text-align: center;
-  }
+  } */

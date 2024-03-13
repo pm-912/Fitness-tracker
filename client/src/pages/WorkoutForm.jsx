@@ -10,8 +10,10 @@ const WorkoutForm = () => {
     const [details, setDetails] = useState('');
 
     const navigate = useNavigate();
-    const [addWorkout] = useMutation(ADD_WORKOUT);
+    const [addWorkout, { error, loading }] = useMutation(ADD_WORKOUT);
 
+    if (loading) return "loading..."
+    if (error) console.log(error)
     // 30 min interval for duration
     const generateDurationOptions = () => {
         const options = [];
@@ -24,8 +26,14 @@ const WorkoutForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            addWorkout({title: title, type: type, duration: duration, details: details})
-            console.log('Posting workout:', { title, type, duration, description });
+            addWorkout({
+                variables: {
+                    input: {
+
+                        title: title, type: type, duration: duration, details: details
+                    }
+        }})
+            console.log('Posting workout:', { title, type, duration, details });
             navigate('/UserWorkout'); // redirects to user workouts
         } catch (error) {
             console.error('Error:', error);
@@ -35,10 +43,10 @@ const WorkoutForm = () => {
     return (
         <div style={{
             border: '5px solid #dcdcdc',
-            borderRadius: '8px',
+            borderRadius: '10px',
             padding: '20px',
             marginBottom: '20px',
-            boxShadow: '20 20px 10px rgba(20, 20, 20, 20.1)', // Corrected boxShadow property
+            boxShadow: '10px 5px 5px #8664B6', // Corrected boxShadow property
             backgroundColor: '#DBD3D9',
             width: '800px',
             height: '600px',
@@ -47,7 +55,6 @@ const WorkoutForm = () => {
             marginRight: 'auto', // Align to the center horizontally
             marginTop: '50px',
         }}>
-
             <h2 style={{
                 fontSize: '50px',
                 marginBottom: '20px',
@@ -60,7 +67,8 @@ const WorkoutForm = () => {
             }}>
                 <div className="workout-box" style={{
                     marginBottom: '20px',
-                    border: '40px'
+                    border: '40px',
+                    color: 'black'
                 }}>
                     <input style={{
                         fontSize: '15px',
@@ -80,7 +88,7 @@ const WorkoutForm = () => {
                     <select style={{
                         fontSize: '15px',
                         marginBottom: '20px',
-                        color: 'gray',
+                        color: 'black',
                         width: '350px',
                         marginLeft: '200px',
                         height: '40px'
@@ -102,7 +110,7 @@ const WorkoutForm = () => {
                     <select style={{
                         fontSize: '15px',
                         marginBottom: '20px',
-                        color: 'gray',
+                        color: 'black',
                         width: '350px',
                         marginLeft: '200px',
                         height: '40px'
@@ -117,7 +125,7 @@ const WorkoutForm = () => {
                     <textarea style={{
                         fontSize: '15px',
                         marginBottom: '20px',
-                        color: 'navy',
+                        color: 'black',
                         width: '500px',
                         height: '50px',
                         marginLeft: '125px'

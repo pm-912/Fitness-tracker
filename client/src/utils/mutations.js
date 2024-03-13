@@ -37,16 +37,12 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_WORKOUT = gql`
-    mutation addWorkout(
-            $workoutId: ID!
-            $commentText: String!
-            $commentAuthor: String!
-        ) {
-            addWorkout(
-                workoutId: $workoutId
-                commentText: $commentText
-                commentAuthor: $commentAuthor
-            ) {
+
+
+  
+  mutation Mutation($input: WorkoutArgs) {
+    addWorkout(input: $input) {
+      
                 _id
                 title
                 details
@@ -56,7 +52,6 @@ export const ADD_WORKOUT = gql`
                 comments {
                     _id
                     commentText
-                    commentAuthor
                     createdAt
             }
         }

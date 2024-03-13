@@ -60,10 +60,13 @@ const resolvers = {
     },
 
     addWorkout: async (parent, args, context) => {
+      console.log(context.user);
       console.log(args);
-      const { title, details, type, duration, workoutUser } = args.input
+ 
+      const { title, details, type, duration,} = args.input
+  
       if (context.user) {
-        const newWorkout = await Workout.create({ title, details, type, duration, workoutUser });
+        const newWorkout = await Workout.create({ title, details, type, duration, workoutUser: context.user._id  });
 
         await User.findOneAndUpdate(
           { _id: context.user._id },

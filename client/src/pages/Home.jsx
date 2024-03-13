@@ -14,7 +14,7 @@ const Home = () => {
     return (
         <main>
             <h2
-                style={{ color: 'navy', fontSize: '25px', marginLeft: '600px' }}>
+                style={{ color: 'navy', fontSize: '25px', marginLeft: '600px', textDecoration: 'none'}}>
                 Community Workouts</h2>
             {loading ? (
                 <div>Loading...</div>
@@ -24,13 +24,15 @@ const Home = () => {
                         display: 'flex',
                         flexWrap: 'wrap',
                         justifyContent: 'space-between',
-                        boxShadow: '0 4px 10px rgba(10, 10, 10, 0.1)',
                         borderRadius: '10px', // Rounded corners for a softer look
                         padding: '20px', // Padding for spacing around content
-                        backgroundColor: 'white', // Light background color
+                        backgroundColor: '#242424', // Light background color
                         width: '100%',
                         boxSizing: 'border-box',
                         marginBottom: '20px',
+                        textDecoration: 'none',
+                        boxShadow: '10px 5px 5px #8664B6',
+                        border: '15px'
                     }}>
                     {workouts && workouts.map((workout) => (
                         <div key={workout._id} className="card" style={{
@@ -40,10 +42,11 @@ const Home = () => {
                             margin: '20px',
                             width: 'calc(30% - 40px)', // Adjusted width to consider padding and margin
                             backgroundColor: '#DBD3D9',
-                            boxShadow: '10 4px 8px rgba(10, 10, 10, 10.1)',
                             boxSizing: 'border-box', // Ensure padding and border are included in the width calculation
                             transition: 'transform 0.3s ease', // Added transition effect for smooth hover
                             cursor: 'pointer',
+                            textDecoration: 'none'
+                           
 
 
                         }}>
