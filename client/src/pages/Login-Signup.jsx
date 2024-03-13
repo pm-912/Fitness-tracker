@@ -7,18 +7,20 @@ import { useNavigate } from 'react-router-dom';
 
 const styles = {
   card: {
-    boxShadow: '1 5px 8px rgba(10, 10, 10, 10.1)',
-    borderRadius: '8px',
+   
+    
     padding: '50px',
     maxWidth: '800px',
     margin: 'auto',
     background: '#ffffff',
-    border: '20px solid #e0e0e0',
+    border: '5px solid #e0e0e0',
+    
   },
   container: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    boxShadow: '10 10px 80px rgba(10, 10, 10, 10.1)',
   },
   title: {
     fontSize: '50px',
@@ -84,8 +86,8 @@ const Auth = ({ isLogin }) => {
 
 
   return (
-    <div style={{display:'flex', marginTop: '50px',}}>
-      <div style={{ ...styles.card, background: 'lightgray', borderColor: '#978E94', width: '400px', height: '500px', marginLeft: '500px' }} >
+    <div style={{display:'flex', marginTop: '50px', marginRight: '10px', }}>
+      <div style={{ ...styles.card, background: '#DBD3D9', borderColor: '#978E94', width: '400px', height: '500px', }} >
         <br></br>
         <h2 style={{
           fontSize: '50px',
@@ -140,11 +142,12 @@ const Auth = ({ isLogin }) => {
         </form>
       </div>
       
-      <div style={{ ...styles.card, background: 'lightgray', borderColor: '#978E94', width: '400px', height: '500px', marginRight: '500px' }} >
+      <div style={{ ...styles.card, background: '#DBD3D9', borderColor: '#978E94', width: '400px', height: '500px' , marginLeft: '0px', }} >
         <h2 style={{
           fontSize: '50px',
           marginBottom: '20px',
           color: 'navy',
+          marginLeft: '50px'
         }} >
           Sign Up</h2>
         <form  onSubmit={handleSignupSubmit}>

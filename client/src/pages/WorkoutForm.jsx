@@ -43,9 +43,6 @@ const WorkoutForm = () => {
             marginLeft: 'auto', // Align to the center horizontally
             marginRight: 'auto', // Align to the center horizontally
             marginTop: '50px',
-            
-            
-           
         }}>
 
             <h2 style={{

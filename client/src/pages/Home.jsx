@@ -14,25 +14,38 @@ const Home = () => {
     return (
         <main>
             <h2
-                style={{ color: 'navy', fontSize: '25px', marginLeft: '800px' }}>
+                style={{ color: 'navy', fontSize: '25px', marginLeft: '600px' }}>
                 Community Workouts</h2>
             {loading ? (
                 <div>Loading...</div>
             ) : (
                 <div
-                    style={{ display: 'flex', flexWrap: 'wrap', 
-                    justifyContent: 'space-between', boxShadow: '0 4px 10px rgba(10, 10, 10, 0.1)',
+                    style={{
+                        display: 'flex',
+                        flexWrap: 'wrap',
+                        justifyContent: 'space-between',
+                        boxShadow: '0 4px 10px rgba(10, 10, 10, 0.1)',
+                        borderRadius: '10px', // Rounded corners for a softer look
+                        padding: '20px', // Padding for spacing around content
+                        backgroundColor: 'white', // Light background color
+                        width: '100%',
+                        boxSizing: 'border-box',
+                        marginBottom: '20px',
                     }}>
                     {workouts && workouts.map((workout) => (
                         <div key={workout._id} className="card" style={{
-                            border: '3px solid #ccc',
-                            padding: '10px', margin: '20px', borderRadius: '15px',
-                            width: '30%',
-                            borderColor: '#978E94',
+                            border: '2px solid #ccc',
+                            borderRadius: '15px',
+                            padding: '20px',
+                            margin: '20px',
+                            width: 'calc(30% - 40px)', // Adjusted width to consider padding and margin
                             backgroundColor: '#DBD3D9',
-                            boxShadow: '20px'
-                           
-                            
+                            boxShadow: '10 4px 8px rgba(10, 10, 10, 10.1)',
+                            boxSizing: 'border-box', // Ensure padding and border are included in the width calculation
+                            transition: 'transform 0.3s ease', // Added transition effect for smooth hover
+                            cursor: 'pointer',
+
+
                         }}>
                             <Workout workout={workout} />
                         </div>
