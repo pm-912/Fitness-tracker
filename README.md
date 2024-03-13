@@ -53,3 +53,4 @@ Live Link:
 ##Repository Link:
 https://github.com/pm-912/fitness-tracker
 
+![Screenshot 2024-03-13 at 12 27 13 AM](https://github.com/pm-912/fitness-tracker/assets/153332797/66f9d363-b6d3-4d00-ad42-54792988f612)
