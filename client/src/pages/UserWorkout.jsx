@@ -6,7 +6,7 @@ import { useQuery } from '@apollo/client';
 
 const UserWorkout = () => {
   const { loading, data } = useQuery(QUERY_ME);
-  const myWorkouts = data?.me || []
+  const myWorkouts = data?.me.workouts || []
   console.log(myWorkouts);
   // const { _id, title, user, type, duration } = workout;
   const navigate = useNavigate();

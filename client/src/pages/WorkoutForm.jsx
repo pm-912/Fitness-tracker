@@ -1,14 +1,19 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import { useMutation } from '@apollo/client';
+import { ADD_WORKOUT } from '../utils/mutations';
 
 const WorkoutForm = () => {
     const [title, setTitle] = useState('');
     const [type, setType] = useState('');
     const [duration, setDuration] = useState('');
-    const [description, setDescription] = useState('');
-    const navigate = useNavigate();
+    const [details, setDetails] = useState('');
 
+    const navigate = useNavigate();
+    const [addWorkout, { error, loading }] = useMutation(ADD_WORKOUT);
+
+    if (loading) return "loading..."
+    if (error) console.log(error)
     // 30 min interval for duration
     const generateDurationOptions = () => {
         const options = [];
@@ -21,8 +26,14 @@ const WorkoutForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            // user submission 
-            console.log('Posting workout:', { title, type, duration, description });
+            addWorkout({
+                variables: {
+                    input: {
+
+                        title: title, type: type, duration: duration, details: details
+                    }
+        }})
+            console.log('Posting workout:', { title, type, duration, details });
             navigate('/UserWorkout'); // redirects to user workouts
         } catch (error) {
             console.error('Error:', error);
@@ -62,7 +73,7 @@ const WorkoutForm = () => {
                     <input style={{
                         fontSize: '15px',
                         marginBottom: '20px',
-                        color: 'black',
+                        color: 'gray',
                         width: '350px',
                         marginLeft: '200px',
                         height: '40px'
@@ -119,9 +130,9 @@ const WorkoutForm = () => {
                         height: '50px',
                         marginLeft: '125px'
                     }}
-                        placeholder="Description" // text box for description.
-                        value={description}
-                        onChange={(e) => setDescription(e.target.value)}
+                        placeholder="Details" // text box for description.
+                        value={details}
+                        onChange={(e) => setDetails(e.target.value)}
                     />
                 </div>
                 <br></br>

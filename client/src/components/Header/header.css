@@ -8,13 +8,19 @@
     padding: 0;
   }
 
+  button {
+    border: none;
+    background-color: transparent;
+  }
+  
   header {
-    background-color: #D9F8FC;
+    background: radial-gradient(at top, #8664B6 10%,#242424 100%);
+    height: 35vh;
   }
   
   .header {
     display: flex;
-    align-items: start;
+    align-items: end;
     justify-content: space-around;
   }
   
@@ -46,7 +52,7 @@
       content: '';
       display: block;
       box-shadow: 0 4px 4px -2px gray;
-      background: radial-gradient(ellipse at center, rgba(185, 232, 239, 1) 25%,rgba(185, 232, 239, 1) 100%);
+      background: radial-gradient(ellipse at center, #8664B6 25%,rgba(185, 232, 239, 1) 100%);
       position: absolute;
       left: 50%;
       bottom: 0;
@@ -60,22 +66,22 @@
 
   .nav-links {
     display: flex;
-    align-items: center;
+    align-items: end;
     justify-content: end;
     padding: 0;
   }
 
-  .nav-btn {
+  .nav-btn, button {
     margin: 0 10px;
     position: relative;
-    color: #333;
+    color: #fff;
     font-size: 20px;
     font-weight: 500;
     padding: 6px 0;
     text-decoration: none;
   }
 
-  .nav-btn:before {
+  .nav-btn:before , button:before {
     content: '';
     position: absolute;
     bottom: 0;
@@ -87,17 +93,17 @@
     opacity: 0;
   }
 
-  .nav-btn:hover:before {
+  .nav-btn:hover:before , button:hover:before {
     width: 100%;
     opacity: 1;
   }
 
-  .more {
+  /* .more {
     box-shadow: 0 4px 4px -2px gray;
-    background-color: #D9F8FC;
+    background: radial-gradient(at bottom, #8664B6 2%,rgba(185, 232, 239, 1) 100%);
     margin: 0;
     width: 100%;
     height: 10vh;
     padding: 1rem 2rem;
     text-align: center;
-  }
+  } */

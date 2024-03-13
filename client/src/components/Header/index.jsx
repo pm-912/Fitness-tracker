@@ -15,7 +15,7 @@ const Header = ({}) => {
             <div className='curve'>
                 <img className='logo' src={logo} alt="Logo" />
             </div>
-            <div className='more'>
+
                 <div className='navbar'>
                     <div className='nav-links'>
                         <div className='header'>
@@ -41,7 +41,7 @@ const Header = ({}) => {
                         </div>
                     </div>
                 </div>
-            </div>
+
         </header>
     );
 };
