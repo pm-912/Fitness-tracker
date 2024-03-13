@@ -14,31 +14,31 @@
         "duration": "60 minutes"
     },
     {
-        "title": "yoga",
+        "title": "Heavy Leg Day",
         "workoutUser": "Ludwig van Beethoven",
         "details": "attended an instructor led pilates class",
-        "type": "Aerobic",
+        "type": "Lifting",
         "duration": "45 minutes"
     },
     {
         "title": "Zumba",
         "workoutUser": "goatedmountaingoat",
         "details": "First time going to a zumba class... I'm sticking to jumpropes...",
-        "type": "cardio",
+        "type": "Cardio",
         "duration": "30 minutes"
     },
     {
         "title": "yoga",
         "workoutUser": "Claude Debussy",
         "details": "Swam laps",
-        "type": "Aerobic",
+        "type": "Yoga",
         "duration": "60 minutes"
     },
     {
         "title": "Yoga",
         "workoutUser": "Chopin",
         "details": "Took a hot yoga class! Sweating",
-        "type": "Aerobic",
+        "type": "Yoga",
         "duration": "45 minutes"
     },
     {

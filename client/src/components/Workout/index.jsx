@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import sport from '../../assets/icons/sport.png'
 import cardio from '../../assets/icons/treadmill.png'
 import lifting from '../../assets/icons/training.png'
-
+import yoga from '../../assets/icons/buddhist-yoga-pose.png'
 
 
 function Workout({ workout }) {
@@ -14,7 +14,8 @@ function Workout({ workout }) {
                 return cardio
             case "Lifting":
                 return lifting
-           
+            case "Yoga":
+                return yoga
           
 
             default: 
