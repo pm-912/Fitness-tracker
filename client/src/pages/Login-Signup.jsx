@@ -69,7 +69,7 @@ const Auth = ({ isLogin }) => {
     e.preventDefault();
     try {
       const { data } = await loginMutation({ variables: { email: loginEmail, password: loginPassword } });
-      localStorage.setItem('token', data.login.token);
+      localStorage.setItem('id_token', data.login.token);
       navigate('/workoutform');
     } catch (error) {
       console.error('Login Error:', error);
@@ -80,7 +80,7 @@ const Auth = ({ isLogin }) => {
     e.preventDefault();
     try {
       const { data } = await signupMutation({ variables: { email: signupEmail, username: signupUsername, password: signupPassword } });
-      localStorage.setItem('token', data.addUser.token);
+      localStorage.setItem('id_token', data.addUser.token);
       navigate('/workoutform');
     } catch (error) {
       console.error('Signup Error:', error);
