@@ -7,20 +7,19 @@ import { useNavigate } from 'react-router-dom';
 
 const styles = {
   card: {
-   
-    
     padding: '50px',
     maxWidth: '800px',
     margin: 'auto',
     background: '#ffffff',
     border: '5px solid #e0e0e0',
+    boxShadow: '15px 15px 15px #8664B6'
     
   },
   container: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    boxShadow: '10 10px 80px rgba(10, 10, 10, 10.1)',
+    boxShadow: '10px 5px 5px #8664B6'
   },
   title: {
     fontSize: '50px',
@@ -95,7 +94,7 @@ const Auth = ({ isLogin }) => {
         <h2 style={{
           fontSize: '50px',
           marginBottom: '20px',
-          color: 'navy',
+          color: 'black',
           marginLeft: '50px'
           }}>Log In</h2>
 
@@ -103,7 +102,7 @@ const Auth = ({ isLogin }) => {
           <input style={{
             fontSize: '25px',
             marginBottom: '20px',
-            color: 'navy',
+            color: 'black',
             width: '300px',
             height: '25px',
           }}
@@ -117,7 +116,7 @@ const Auth = ({ isLogin }) => {
           <input style={{
             fontSize: '25px',
             marginBottom: '20px',
-            color: 'navy',
+            color: 'black',
             width: '300px',
             height: '25px'
           }}
@@ -149,7 +148,7 @@ const Auth = ({ isLogin }) => {
         <h2 style={{
           fontSize: '50px',
           marginBottom: '20px',
-          color: 'navy',
+          color: 'black',
           marginLeft: '50px'
         }} >
           Sign Up</h2>
@@ -158,7 +157,7 @@ const Auth = ({ isLogin }) => {
             style={{
               fontSize: '25px',
               marginBottom: '20px',
-              color: 'navy',
+              color: 'black',
               width: '300px',
               height: '25px',
               
@@ -172,7 +171,7 @@ const Auth = ({ isLogin }) => {
             style={{
               fontSize: '25px',
               marginBottom: '20px',
-              color: 'navy',
+              color: 'black',
               width: '300px',
               height: '25px'
 
@@ -187,7 +186,7 @@ const Auth = ({ isLogin }) => {
             style={{
               fontSize: '25px',
               marginBottom: '20px',
-              color: 'navy',
+              color: 'black',
               width: '300px',
               height: '25px'
             }}
@@ -207,7 +206,7 @@ const Auth = ({ isLogin }) => {
             marginTop: '25px',
             width: '150px',
             height: '80px',
-            marginLeft: '50px'
+            marginLeft: '80px'
 
           }}type="submit">Sign Up</button>
         </form>

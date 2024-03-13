@@ -53,7 +53,7 @@ const WorkoutCard = () => {
         
         <div className="workout-card" 
         style={{ 
-          border: '5px solid #ccc', 
+          border: '7px solid #ccc', 
           padding: '0px', 
           borderRadius: '5px', 
           margin: '50px 300px 50px 300px',
@@ -62,7 +62,7 @@ const WorkoutCard = () => {
           gridTemplateColumns: 'repeat(3, .5fr)',
           gridTemplateRows: 'repeat(3, .5fr)',
           position: 'relative',
-          boxShadow: '2px 2px 5px gray'
+          boxShadow: '15px 15px 15px #8664B6'
           }}>
           <div>
             <h2 style={{
@@ -107,18 +107,21 @@ const WorkoutCard = () => {
         padding: '10px', 
         borderRadius: '5px',
         margin: '30px 500px 10px 60px',
-        boxShadow: '10px 5px 5px red'
+        boxShadow: '10px 5px 5px #8664B6',
+        marginLeft: '350px',
+        width: '700px',
         }}>
           <div className="add-comment-container" 
           style={{ 
             marginBottom: '10px' 
             }}>
-            <textarea
+            <textarea style={{height: '50px', width: '675px'}}
               placeholder="Add a comment"
               value={newComment}
               onChange={(e) => setNewComment(e.target.value)}
             />
-            <button onClick={handleCommentSubmit}>Add Comment</button>
+            
+            <button style={{height: '50px', width: '150px', marginLeft: '265px', backgroundColor: 'green', color: 'white'}}onClick={handleCommentSubmit}>Add Comment</button>
           </div>
 
           <div className="posted-comments-container">

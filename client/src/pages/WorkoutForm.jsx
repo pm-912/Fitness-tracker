@@ -32,10 +32,10 @@ const WorkoutForm = () => {
     return (
         <div style={{
             border: '5px solid #dcdcdc',
-            borderRadius: '8px',
+            borderRadius: '10px',
             padding: '20px',
             marginBottom: '20px',
-            boxShadow: '20 20px 10px rgba(20, 20, 20, 20.1)', // Corrected boxShadow property
+            boxShadow: '10px 5px 5px #8664B6', // Corrected boxShadow property
             backgroundColor: '#DBD3D9',
             width: '800px',
             height: '600px',
@@ -44,7 +44,6 @@ const WorkoutForm = () => {
             marginRight: 'auto', // Align to the center horizontally
             marginTop: '50px',
         }}>
-
             <h2 style={{
                 fontSize: '50px',
                 marginBottom: '20px',
@@ -57,12 +56,13 @@ const WorkoutForm = () => {
             }}>
                 <div className="workout-box" style={{
                     marginBottom: '20px',
-                    border: '40px'
+                    border: '40px',
+                    color: 'black'
                 }}>
                     <input style={{
                         fontSize: '15px',
                         marginBottom: '20px',
-                        color: 'lightgray',
+                        color: 'black',
                         width: '350px',
                         marginLeft: '200px',
                         height: '40px'
@@ -77,7 +77,7 @@ const WorkoutForm = () => {
                     <select style={{
                         fontSize: '15px',
                         marginBottom: '20px',
-                        color: 'gray',
+                        color: 'black',
                         width: '350px',
                         marginLeft: '200px',
                         height: '40px'
@@ -99,7 +99,7 @@ const WorkoutForm = () => {
                     <select style={{
                         fontSize: '15px',
                         marginBottom: '20px',
-                        color: 'gray',
+                        color: 'black',
                         width: '350px',
                         marginLeft: '200px',
                         height: '40px'
@@ -114,7 +114,7 @@ const WorkoutForm = () => {
                     <textarea style={{
                         fontSize: '15px',
                         marginBottom: '20px',
-                        color: 'navy',
+                        color: 'black',
                         width: '500px',
                         height: '50px',
                         marginLeft: '125px'
