@@ -14,7 +14,7 @@ const Home = () => {
     return (
         <main>
             <h2
-                style={{ color: 'navy', fontSize: '25px', marginLeft: '600px' }}>
+                style={{ color: 'navy', fontSize: '25px', marginLeft: '600px', textDecoration: 'none'}}>
                 Community Workouts</h2>
             {loading ? (
                 <div>Loading...</div>
@@ -31,6 +31,7 @@ const Home = () => {
                         width: '100%',
                         boxSizing: 'border-box',
                         marginBottom: '20px',
+                        textDecoration: 'none'
                     }}>
                     {workouts && workouts.map((workout) => (
                         <div key={workout._id} className="card" style={{
@@ -44,6 +45,7 @@ const Home = () => {
                             boxSizing: 'border-box', // Ensure padding and border are included in the width calculation
                             transition: 'transform 0.3s ease', // Added transition effect for smooth hover
                             cursor: 'pointer',
+                            textDecoration: 'none'
 
 
                         }}>
