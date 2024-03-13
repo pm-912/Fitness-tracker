@@ -53,9 +53,12 @@ const styles = {
 };
 
 const Auth = ({ isLogin }) => {
-  const [email, setEmail] = useState('');
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [loginEmail, setLoginEmail] = useState('');
+  const [loginPassword, setLoginPassword] = useState('');
+
+  const [signupEmail, setSignupEmail] = useState('');
+  const [signupUsername, setSignupUsername] = useState('');
+  const [signupPassword, setSignupPassword] = useState('');
   const navigate = useNavigate();
 
   // mutations from files
@@ -65,9 +68,9 @@ const Auth = ({ isLogin }) => {
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await loginMutation({ variables: { email, password } });
+      const { data } = await loginMutation({ variables: { email: loginEmail, password: loginPassword } });
       localStorage.setItem('token', data.login.token);
-      navigate('/Home');
+      navigate('/workoutform');
     } catch (error) {
       console.error('Login Error:', error);
     }
@@ -76,9 +79,9 @@ const Auth = ({ isLogin }) => {
   const handleSignupSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await signupMutation({ variables: { email, username, password } });
+      const { data } = await signupMutation({ variables: { email: signupEmail, username: signupUsername, password: signupPassword } });
       localStorage.setItem('token', data.addUser.token);
-      navigate('/Home');
+      navigate('/workoutform');
     } catch (error) {
       console.error('Signup Error:', error);
     }
@@ -106,8 +109,8 @@ const Auth = ({ isLogin }) => {
           }}
             type="email"
             placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={loginEmail}
+            onChange={(e) => setLoginEmail(e.target.value)}
           />
           <br></br>
           
@@ -118,10 +121,10 @@ const Auth = ({ isLogin }) => {
             width: '300px',
             height: '25px'
           }}
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+          type="password"
+          placeholder="Password"
+          value={loginPassword}
+          onChange={(e) => setLoginPassword(e.target.value)}
           />
           <br></br>
           <button style={{
@@ -159,13 +162,11 @@ const Auth = ({ isLogin }) => {
               width: '300px',
               height: '25px',
               
-
-
             }}
             type="email"
             placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={signupEmail}
+            onChange={(e) => setSignupEmail(e.target.value)}
           />
           <input
             style={{
@@ -179,8 +180,8 @@ const Auth = ({ isLogin }) => {
             }}
             type="text"
             placeholder="Username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            value={signupUsername}
+            onChange={(e) => setSignupUsername(e.target.value)}
           />
           <input
             style={{
@@ -192,8 +193,8 @@ const Auth = ({ isLogin }) => {
             }}
             type="password"
             placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            value={signupPassword}
+            onChange={(e) => setSignupPassword(e.target.value)}
           />
           <button style={{
             backgroundColor: 'green',
