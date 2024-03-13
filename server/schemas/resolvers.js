@@ -18,12 +18,12 @@ const resolvers = {
     },
 
     singleWorkout: async (parent, { _id }, context) => {
-      if (context.user) {
+      // if (context.user) {
         const workout = await Workout.findById(_id).populate('comments').populate('workoutUser');
 
         return workout;
-       }
-      throw AuthenticationError
+      //  }
+      // throw AuthenticationError
     },
 
   },

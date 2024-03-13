@@ -29,7 +29,7 @@ function Workout({ workout }) {
                     state: { workout: workout }}
                     } key={workout._id} >
                     <div>
-                    <img src={chooseImage()} style={{height: '40px'}}/>
+                    <img src={chooseImage()} style={{height: '70px'}}/>
 
                         <h3>User</h3>
                         <h3>{workout.workoutUser?.username}</h3>

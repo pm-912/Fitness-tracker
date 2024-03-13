@@ -14,7 +14,11 @@ const Home = () => {
     return (
         <main>
             <h2
-                style={{ color: 'navy', fontSize: '25px', marginLeft: '800px' }}>
+                style={{ 
+                    color: 'navy', 
+                    fontSize: '25px', 
+                    margin: '0 auto',  
+                    }}>
                 Community Workouts</h2>
             {loading ? (
                 <div>Loading...</div>
