@@ -26,7 +26,7 @@ const Home = () => {
                         justifyContent: 'space-between',
                         borderRadius: '10px', // Rounded corners for a softer look
                         padding: '20px', // Padding for spacing around content
-                        backgroundColor: 'white', // Light background color
+                        backgroundColor: '#242424', // Light background color
                         width: '100%',
                         boxSizing: 'border-box',
                         marginBottom: '20px',
