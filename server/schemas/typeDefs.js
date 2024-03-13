@@ -34,10 +34,11 @@ const typeDefs = `
         allWorkouts: [Workout]
         myWorkouts(_id: ID!): [Workout]
         singleWorkout(_id: ID!): Workout
+        me: User
     }
 
     input WorkoutArgs {
-        _id: ID!
+        workoutUser: ID!
         title: String
         details: String
         type: String
@@ -47,7 +48,7 @@ const typeDefs = `
     type Mutation {
         login(username: String, email: String, password: String!): Auth
         addUser(username: String!, email: String!, password: String!): Auth
-        addWorkout(args: WorkoutArgs): Workout
+        addWorkout(input: WorkoutArgs): Workout
         updateWorkout(args: WorkoutArgs): Workout
         deleteWorkout(_id: ID!): Workout
         addComment(workoutId: ID!, commentText: String!, commentAuthor: String!): Comment

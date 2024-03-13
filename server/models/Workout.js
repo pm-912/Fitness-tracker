@@ -9,7 +9,7 @@ const workoutSchema = new Schema({
     title: {
         type: String,
         trim: true,
-        require: true
+        required: true
     },
 
     details: {

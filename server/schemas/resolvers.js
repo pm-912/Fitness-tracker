@@ -18,20 +18,24 @@ const resolvers = {
     },
 
     singleWorkout: async (parent, { _id }, context) => {
-      if (context.user) {
+      // if (context.user) {
         const workout = await Workout.findById(_id).populate('comments').populate('workoutUser');
 
         return workout;
-       }
-      throw AuthenticationError
+      //  }
+      // throw AuthenticationError
     },
-
+    me: async (parent, args, context) => {
+      if (context.user) {
+        return await User.findOne({ _id: context.user._id }).populate('workouts');
+      }
+    }
   },
 
   Mutation: {
     login: async (parent, { username, email, password }) => {
       const user = await User.findOne({ $or: [{ email }, { username }]});
-
+      console.log(user);
       if (!user) {
         throw AuthenticationError;
       };
@@ -56,9 +60,10 @@ const resolvers = {
     },
 
     addWorkout: async (parent, args, context) => {
-      const { title, details, type, duration } = args
+      console.log(args);
+      const { title, details, type, duration, workoutUser } = args.input
       if (context.user) {
-        const newWorkout = await Workout.create({ title, details, type, duration });
+        const newWorkout = await Workout.create({ title, details, type, duration, workoutUser });
 
         await User.findOneAndUpdate(
           { _id: context.user._id },

@@ -6,6 +6,10 @@ import yoga from '../../assets/icons/buddhist-yoga-pose.png'
 
 
 function Workout({ workout }) {
+    if (!workout) {
+        return null;
+    }
+    console.log(workout);
     const chooseImage =() => {
         switch(workout.type){
             case  "Aerobic":
@@ -23,16 +27,15 @@ function Workout({ workout }) {
     }
     
     return (
-        <div className="">
+        <div style={{marginLeft: '100px',}}className="">
             {console.log(workout)}
-                <Link to={{
+                <Link style={{textDecoration: 'none',}}to={{
                     pathname: `/singleworkout/${workout._id}`, 
                     state: { workout: workout }}
                     } key={workout._id} >
                     <div>
-                    <img src={chooseImage()} style={{height: '40px'}}/>
+                    <img src={chooseImage()} style={{height: '70px', marginLeft: '30px', boxShadow: '10px 5px 5px #8664B6'}}/>
 
-                        <h3>User</h3>
                         <h3>{workout.workoutUser?.username}</h3>
                         <p>{workout.title}</p>
                         <p>{workout.type}</p>
